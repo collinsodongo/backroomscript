@@ -8,6 +8,7 @@ import {
   IoBookmark,
   IoChatbubbles,
   IoStar,
+  IoCard,
   IoRocket,
   IoLockClosed,
   IoMenu,
@@ -48,6 +49,12 @@ const navigationItems = [
     id: "success-stories",
     icon: IoStar,
     label: "Success Stories",
+    locked: false,
+  },
+  {
+    id: "payment-methods",
+    icon: IoCard,
+    label: "Payment Methods",
     locked: false,
   },
 ];

@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useAuthStore } from "@/app/store/AuthStore";
 import { useTemplateStore } from "@/app/store/TemplateStore";
 import { useSubscriptionStore } from "@/app/store/SubscriptionStore";
+import { useCardStore } from "@/app/store/CardStore";
 import { toast } from "sonner";
 
 import Sidebar from "@/app/components/Sidebar";
@@ -13,8 +14,10 @@ import TemplateModal from "@/app/components/TemplateModal";
 import PricingGrid from "@/app/components/PricingGrid";
 import CoachingSection from "@/app/components/CoachingSection";
 import SuccessStorySubmission from "@/app/components/SuccessStorySubmission";
+import PaymentMethods from "@/app/components/PaymentMethods";
 
 import styles from "@/app/style/dashboard.module.css";
+import cardStyles from "@/app/style/paymentMethods.module.css";
 
 import {
   IoSparkles,
@@ -28,6 +31,7 @@ import {
   IoText,
   IoPeople,
   IoCalendar,
+  IoCard,
 } from "react-icons/io5";
 
 
@@ -78,6 +82,13 @@ export default function Dashboard() {
   const paymentLoading = useSubscriptionStore((state) => state.paymentLoading);
   const verifyPayment = useSubscriptionStore((state) => state.verifyPayment);
   const verifyingPayment = useSubscriptionStore((state) => state.verifyingPayment);
+  const chargeWithSavedCard = useSubscriptionStore((state) => state.chargeWithSavedCard);
+  const getSubscription = useSubscriptionStore((state) => state.getSubscription);
+
+  const cards = useCardStore((state) => state.cards);
+  const getCards = useCardStore((state) => state.getCards);
+  const verifyCardAuthorization = useCardStore((state) => state.verifyCardAuthorization);
+  const verifyingCard = useCardStore((state) => state.verifyingCard);
 
   const tiers = useMemo(() => Object.values(tiersObject), [tiersObject]);
 
@@ -88,6 +99,9 @@ export default function Dashboard() {
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const [upgradingToTier, setUpgradingToTier] = useState(null);
   const [verificationComplete, setVerificationComplete] = useState(false);
+  const [showCardPicker, setShowCardPicker] = useState(false);
+  const [pendingTier, setPendingTier] = useState(null);
+  const [chargingCardId, setChargingCardId] = useState(null);
 
   const currentTierInfo = getTierInfo(currentTier);
 
@@ -106,6 +120,7 @@ export default function Dashboard() {
     bookmarks: "Bookmarked Templates",
     coaching: "Coaching & Support",
     "success-stories": "Success Stories",
+    "payment-methods": "Payment Methods",
   };
 
   const tabSubtitles = {
@@ -114,6 +129,7 @@ export default function Dashboard() {
     bookmarks: "Your saved favorite templates",
     coaching: "Get personalized guidance from our experts",
     "success-stories": "Share your success story and inspire others",
+    "payment-methods": "Save your cards securely for faster upgrades",
   };
 
 
@@ -134,11 +150,18 @@ export default function Dashboard() {
     const status = searchParams.get("status");
 
     if ((reference || trxref) && !verificationComplete) {
-      handlePaymentVerification(reference || trxref, status);
+      const paymentReference = reference || trxref;
+
+      if (paymentReference.startsWith("BKRM-CARD-")) {
+        handleCardVerification(paymentReference, status);
+      } else {
+        handlePaymentVerification(paymentReference, status);
+      }
     } else {
       getAllTemplates();
       getPreviousTemplates();
       getBookmarkedTemplates();
+      getCards();
     }
   }, [isAuth, isInitialized, router, searchParams, verificationComplete]);
 
@@ -180,6 +203,49 @@ export default function Dashboard() {
       console.error("Payment verification error:", error);
       toast.error("Failed to verify payment. Please contact support.", {
         id: "verify-payment",
+      });
+      router.replace("/dashboard");
+    }
+  };
+
+  const handleCardVerification = async (reference, status) => {
+    if (status === "cancelled") {
+      toast.error("Card verification was cancelled");
+      router.replace("/dashboard");
+      return;
+    }
+
+    toast.loading("Verifying your card...", { id: "verify-card" });
+
+    try {
+      const result = await verifyCardAuthorization(reference);
+
+      if (result.success) {
+        toast.success(
+          result.message || "Card verified and saved successfully!",
+          { id: "verify-card", duration: 5000 }
+        );
+
+        setVerificationComplete(true);
+        setActiveTab("payment-methods");
+
+        await Promise.all([
+          getAllTemplates(),
+          getPreviousTemplates(),
+          getBookmarkedTemplates(),
+        ]);
+
+        router.replace("/dashboard");
+      } else {
+        toast.error(result.message || "Card verification failed", {
+          id: "verify-card",
+        });
+        router.replace("/dashboard");
+      }
+    } catch (error) {
+      console.error("Card verification error:", error);
+      toast.error("Failed to verify card. Please contact support.", {
+        id: "verify-card",
       });
       router.replace("/dashboard");
     }
@@ -240,6 +306,16 @@ export default function Dashboard() {
       return;
     }
 
+    if (cards.length > 0) {
+      setPendingTier(tier);
+      setShowCardPicker(true);
+      return;
+    }
+
+    await startRedirectPayment(tier);
+  };
+
+  const startRedirectPayment = async (tier) => {
     setUpgradingToTier(tier.id);
 
     const result = await initializePayment(tier.id);
@@ -250,6 +326,50 @@ export default function Dashboard() {
       toast.error(result.message || "Failed to initialize payment");
       setUpgradingToTier(null);
     }
+  };
+
+  const handlePayWithSavedCard = async (card) => {
+    if (!pendingTier) return;
+
+    setChargingCardId(card._id);
+
+    const result = await chargeWithSavedCard(pendingTier.id, card._id);
+
+    if (result.success && result.requiresAction) {
+      toast.info("Your bank requires verification. Redirecting...");
+      window.location.href = result.data.authorizationUrl;
+      return;
+    }
+
+    if (result.success) {
+      toast.success(
+        result.message || "Payment successful! Welcome to your new tier! 🎉",
+        { duration: 5000 }
+      );
+
+      setChargingCardId(null);
+      setShowCardPicker(false);
+      setPendingTier(null);
+      setShowUpgradeModal(false);
+
+      await Promise.all([
+        getSubscription(),
+        getAllTemplates(),
+        getPreviousTemplates(),
+        getBookmarkedTemplates(),
+      ]);
+    } else {
+      toast.error(result.message || "Payment failed. Please try another card.");
+      setChargingCardId(null);
+    }
+  };
+
+  const handlePayWithNewMethod = async () => {
+    if (!pendingTier) return;
+
+    setShowCardPicker(false);
+    await startRedirectPayment(pendingTier);
+    setPendingTier(null);
   };
 
 
@@ -269,6 +389,10 @@ export default function Dashboard() {
 
   if (verifyingPayment) {
     return <LoadingState message="Verifying your payment..." />;
+  }
+
+  if (verifyingCard) {
+    return <LoadingState message="Verifying your card..." />;
   }
 
   if (templatesLoading && !templates.length && !verificationComplete) {
@@ -444,6 +568,8 @@ export default function Dashboard() {
         )}
 
         {activeTab === "success-stories" && <SuccessStorySubmission />}
+
+        {activeTab === "payment-methods" && <PaymentMethods />}
       </main>
 
       {selectedTemplate && (
@@ -453,6 +579,89 @@ export default function Dashboard() {
           onClose={() => setSelectedTemplate(null)}
           onBookmarkToggle={handleToggleBookmark}
         />
+      )}
+
+      {showCardPicker && pendingTier && (
+        <div
+          className={styles.modalOverlay}
+          onClick={() => {
+            if (chargingCardId) return;
+            setShowCardPicker(false);
+            setPendingTier(null);
+          }}
+        >
+          <div
+            className={styles.modalContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={styles.modalClose}
+              onClick={() => {
+                if (chargingCardId) return;
+                setShowCardPicker(false);
+                setPendingTier(null);
+              }}
+            >
+              <IoClose />
+            </button>
+
+            <div className={cardStyles.cardPicker}>
+              <div className={cardStyles.cardPickerHeader}>
+                <h2>Choose Payment Method</h2>
+                <p>
+                  Upgrading to {pendingTier.name} — {pendingTier.currency}{" "}
+                  {pendingTier.price?.toLocaleString()}
+                </p>
+              </div>
+
+              <div className={cardStyles.cardPickerList}>
+                {cards.map((card) => (
+                  <button
+                    key={card._id}
+                    className={cardStyles.cardPickerItem}
+                    onClick={() => handlePayWithSavedCard(card)}
+                    disabled={!!chargingCardId}
+                  >
+                    <div className={cardStyles.cardIcon}>
+                      <IoCard />
+                    </div>
+                    <div className={cardStyles.cardPickerItemInfo}>
+                      <strong>
+                        {card.cardType ? card.cardType.trim() : "Card"} ••••{" "}
+                        {card.last4}
+                      </strong>
+                      <span>
+                        {chargingCardId === card._id
+                          ? "Charging your card..."
+                          : `Expires ${card.expMonth}/${card.expYear}${
+                              card.isDefault ? " • Default" : ""
+                            }`}
+                      </span>
+                    </div>
+                    <IoChevronForward
+                      className={cardStyles.cardPickerChevron}
+                    />
+                  </button>
+                ))}
+              </div>
+
+              <div className={cardStyles.cardPickerDivider}>or</div>
+
+              <button
+                className={cardStyles.newPaymentButton}
+                onClick={handlePayWithNewMethod}
+                disabled={!!chargingCardId || paymentLoading}
+              >
+                <IoCard />
+                <span>
+                  {paymentLoading
+                    ? "Redirecting..."
+                    : "Pay with another method"}
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
       )}
 
       {showUpgradeModal && (

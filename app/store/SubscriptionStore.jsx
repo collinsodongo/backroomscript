@@ -158,6 +158,54 @@ export const useSubscriptionStore = create((set, get) => ({
     }
   },
 
+  chargeWithSavedCard: async (tier, cardId) => {
+    try {
+      set({ paymentLoading: true });
+      const { getAuthHeader } = useAuthStore.getState();
+
+      const response = await fetch(`${SERVER_API}/subscriptions/charge-card`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...getAuthHeader(),
+        },
+        body: JSON.stringify({ tier, cardId }),
+      });
+
+      const data = await response.json();
+      if (data.status === "success") {
+        set({ paymentLoading: false });
+
+        // Bank requires 2FA before the charge completes
+        if (data.data.requiresAction) {
+          return {
+            success: true,
+            requiresAction: true,
+            data: data.data,
+          };
+        }
+
+        set({ currentSubscription: data.data.subscription });
+
+        useAuthStore.getState().updateUser({
+          currentTier: data.data.tier
+        });
+
+        return {
+          success: true,
+          data: data.data,
+          message: "Payment successful! Welcome to your new tier!"
+        };
+      }
+      set({ paymentLoading: false });
+      return { success: false, message: data.message };
+    } catch (error) {
+      console.error("Charge with saved card error:", error);
+      set({ paymentLoading: false });
+      return { success: false, message: "Failed to charge card" };
+    }
+  },
+
   verifyPayment: async (reference) => {
     try {
       set({ verifyingPayment: true });

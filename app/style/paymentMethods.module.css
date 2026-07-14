@@ -1,0 +1,423 @@
+@media screen {
+  .paymentMethods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  .loadingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xxxl) var(--spacing-lg);
+    color: var(--warm-gray);
+  }
+
+  .loaderIcon {
+    font-size: 32px;
+    color: var(--primary-color);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(0.9);
+    }
+  }
+
+  .verificationNote {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: linear-gradient(
+      135deg,
+      rgba(236, 72, 153, 0.05) 0%,
+      rgba(168, 85, 247, 0.05) 100%
+    );
+    border: 1px solid rgba(236, 72, 153, 0.1);
+    border-radius: var(--radius-lg);
+  }
+
+  .verificationNote svg {
+    font-size: 24px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .verificationNote strong {
+    display: block;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--dark-color);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .verificationNote p {
+    font-size: var(--font-size-sm);
+    color: var(--warm-gray);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .cardsList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .emptyState {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    background: var(--light-background-color);
+    border-radius: var(--radius-xl);
+  }
+
+  .emptyIcon {
+    font-size: 48px;
+    color: var(--primary-color);
+    opacity: 0.4;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .emptyState h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--dark-color);
+    margin: 0;
+  }
+
+  .emptyState p {
+    font-size: var(--font-size-sm);
+    color: var(--warm-gray);
+    max-width: 400px;
+    margin: 0;
+  }
+
+  .cardItem {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--light-background-color);
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-smooth);
+  }
+
+  .cardItem:hover {
+    border-color: rgba(236, 72, 153, 0.2);
+    box-shadow: var(--shadow-light);
+    transform: translateY(-2px);
+  }
+
+  .cardItemDefault {
+    border-color: rgba(236, 72, 153, 0.25);
+    background: linear-gradient(
+      135deg,
+      rgba(236, 72, 153, 0.05) 0%,
+      rgba(168, 85, 247, 0.05) 100%
+    );
+  }
+
+  .cardIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-md);
+    color: var(--light-color);
+    font-size: 24px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.25);
+  }
+
+  .cardInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    flex: 1;
+  }
+
+  .cardTitle {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .cardTitle h3 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-family-primary);
+    color: var(--dark-color);
+    margin: 0;
+  }
+
+  .defaultBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    background: var(--gradient-primary);
+    color: var(--light-color);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-full);
+  }
+
+  .defaultBadge svg {
+    font-size: 10px;
+  }
+
+  .cardMeta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--warm-gray);
+  }
+
+  .cardActions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .defaultButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px var(--spacing-md);
+    background: transparent;
+    border: 1px solid rgba(236, 72, 153, 0.25);
+    border-radius: var(--radius-md);
+    color: var(--primary-color);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+
+  .defaultButton:hover {
+    background: linear-gradient(
+      135deg,
+      rgba(236, 72, 153, 0.08) 0%,
+      rgba(168, 85, 247, 0.08) 100%
+    );
+    border-color: rgba(236, 72, 153, 0.4);
+  }
+
+  .deleteButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px var(--spacing-md);
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-md);
+    color: var(--error-color);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+  }
+
+  .deleteButton:hover {
+    background: rgba(239, 68, 68, 0.06);
+    border-color: rgba(239, 68, 68, 0.4);
+  }
+
+  .deleteButtonConfirm {
+    background: var(--error-color);
+    border-color: var(--error-color);
+    color: var(--light-color);
+  }
+
+  .deleteButtonConfirm:hover {
+    background: var(--error-color);
+    border-color: var(--error-color);
+  }
+
+  .addCardButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 14px var(--spacing-lg);
+    background: var(--gradient-primary);
+    color: var(--light-color);
+    border: none;
+    border-radius: 12px;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-bold);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);
+    align-self: flex-start;
+  }
+
+  .addCardButton svg {
+    font-size: 20px;
+  }
+
+  .addCardButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.35);
+  }
+
+  .addCardButton:active {
+    transform: translateY(-1px);
+  }
+
+  /* Card picker (upgrade flow) */
+  .cardPicker {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .cardPickerHeader {
+    text-align: center;
+  }
+
+  .cardPickerHeader h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-color);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .cardPickerHeader p {
+    font-size: var(--font-size-sm);
+    color: var(--warm-gray);
+    margin: 0;
+  }
+
+  .cardPickerList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .cardPickerItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--light-background-color);
+    border: 2px solid transparent;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: all var(--transition-smooth);
+  }
+
+  .cardPickerItem:hover:not(:disabled) {
+    border-color: rgba(236, 72, 153, 0.3);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-light);
+  }
+
+  .cardPickerItem:disabled {
+    cursor: not-allowed;
+  }
+
+  .cardPickerItemInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .cardPickerItemInfo strong {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--dark-color);
+  }
+
+  .cardPickerItemInfo span {
+    font-size: var(--font-size-xs);
+    color: var(--warm-gray);
+  }
+
+  .cardPickerChevron {
+    font-size: 18px;
+    color: var(--primary-color);
+    flex-shrink: 0;
+  }
+
+  .cardPickerDivider {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    color: var(--warm-gray);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+  }
+
+  .cardPickerDivider::before,
+  .cardPickerDivider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(236, 72, 153, 0.15);
+  }
+
+  .newPaymentButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: 14px var(--spacing-lg);
+    background: transparent;
+    border: 2px solid rgba(236, 72, 153, 0.25);
+    border-radius: 12px;
+    color: var(--primary-color);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-smooth);
+    width: 100%;
+  }
+
+  .newPaymentButton:hover:not(:disabled) {
+    background: linear-gradient(
+      135deg,
+      rgba(236, 72, 153, 0.06) 0%,
+      rgba(168, 85, 247, 0.06) 100%
+    );
+    border-color: rgba(236, 72, 153, 0.4);
+  }
+}
+
+/* Tablet & Up - 768px+ (48em+) */
+@media only screen and (min-width: 48em) {
+  .cardItem {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cardActions {
+    flex-wrap: nowrap;
+  }
+}
