@@ -15,7 +15,7 @@ export const useSubscriptionStore = create((set, get) => ({
   tiers: {
     starter: {
       id: "starter",
-      name: "Starter Glow",
+      name: "Foundation",
       price: 0, 
       currency: "KSh",
       description: "Start learning for free and begin your path to certification",
@@ -31,12 +31,12 @@ export const useSubscriptionStore = create((set, get) => ({
         coaching: false,
         responseTime: "24 hours"
       },
-      color: "#ec4899",
-      gradient: "linear-gradient(135deg, #ec4899 0%, #f43f5e 100%)"
+      color: "#f26a3d",
+      gradient: "linear-gradient(135deg, #f26a3d 0%, #e85d2f 100%)"
     },
     pro: {
       id: "pro",
-      name: "Radiant Pro",
+      name: "Certificate",
       price: null, 
       currency: "KSh",
       description: "Unlock the full course and get on the path to job placement",
@@ -45,7 +45,7 @@ export const useSubscriptionStore = create((set, get) => ({
         "20+ Premium templates",
         "Bookmark your favorites",
         "Access previous templates",
-        "Everything in Starter Glow",
+        "Everything in Foundation",
         "Advanced flirting techniques",
         "Relationship building methods",
         "Priority support (12h response)",
@@ -59,12 +59,12 @@ export const useSubscriptionStore = create((set, get) => ({
         coaching: false,
         responseTime: "12 hours"
       },
-      color: "#a855f7",
-      gradient: "linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%)"
+      color: "#10b981",
+      gradient: "linear-gradient(135deg, #10b981 0%, #34d399 100%)"
     },
     elite: {
       id: "elite",
-      name: "Queen Elite",
+      name: "Career",
       price: null, 
       currency: "KSh",
       description: "Complete training with mentorship and priority job access",
@@ -75,7 +75,7 @@ export const useSubscriptionStore = create((set, get) => ({
         "Direct WhatsApp support",
         "Custom template requests",
         "Lifetime content updates",
-        "Everything on Radiant Pro",
+        "Everything on Certificate",
         "Priority feature requests",
         "1-on-1 mentorship session (60min)",
         "Priority access to jobs from companies that hire through us",

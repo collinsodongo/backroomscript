@@ -125,7 +125,7 @@
     background: var(--glass-bg-light);
     backdrop-filter: var(--blur-md);
     -webkit-backdrop-filter: var(--blur-md);
-    border: 1px solid rgba(236, 72, 153, 0.1);
+    border: 1px solid rgba(242, 106, 61, 0.1);
     border-radius: 20px;
     padding: 2rem;
     display: flex;
@@ -138,7 +138,7 @@
   .testimonialCard:hover {
     transform: translateY(-8px);
     box-shadow: var(--glass-shadow-lg);
-    border-color: rgba(236, 72, 153, 0.2);
+    border-color: rgba(242, 106, 61, 0.2);
   }
 
   .cardContent {
@@ -179,7 +179,7 @@
     align-items: center;
     gap: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(236, 72, 153, 0.1);
+    border-top: 1px solid rgba(242, 106, 61, 0.1);
   }
 
   .avatarCircle {
@@ -194,7 +194,7 @@
     font-weight: 700;
     font-size: 1rem;
     flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 4px 12px rgba(242, 106, 61, 0.3);
   }
 
   .userDetails {
@@ -266,7 +266,7 @@
     background: var(--glass-bg-medium);
     backdrop-filter: var(--blur-md);
     -webkit-backdrop-filter: var(--blur-md);
-    border: 1px solid rgba(236, 72, 153, 0.1);
+    border: 1px solid rgba(242, 106, 61, 0.1);
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -274,7 +274,7 @@
 
   .faqItem:hover {
     box-shadow: var(--glass-shadow-md);
-    border-color: rgba(236, 72, 153, 0.2);
+    border-color: rgba(242, 106, 61, 0.2);
   }
 
   .faqQuestion {
@@ -294,7 +294,7 @@
   }
 
   .faqQuestion:hover {
-    background: rgba(236, 72, 153, 0.03);
+    background: rgba(242, 106, 61, 0.03);
   }
 
   .questionText {

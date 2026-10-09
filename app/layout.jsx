@@ -27,7 +27,7 @@ const BANNER_URL =
   "https://raw.githubusercontent.com/DarknessMonarch/backroomscript/refs/heads/master/public/assets/banner.png";
 
 export const viewport = {
-  themeColor: "#fef3f8",
+  themeColor: "#fff5f0",
 };
 
 export const metadata = {
@@ -161,7 +161,7 @@ const organizationSchema = {
     itemListElement: [
       {
         "@type": "OfferCatalog",
-        name: "Starter Glow",
+        name: "Foundation",
         itemListElement: [
           {
             "@type": "Offer",
@@ -174,7 +174,7 @@ const organizationSchema = {
       },
       {
         "@type": "OfferCatalog",
-        name: "Radiant Pro",
+        name: "Certificate",
         itemListElement: [
           {
             "@type": "Offer",
@@ -187,7 +187,7 @@ const organizationSchema = {
       },
       {
         "@type": "OfferCatalog",
-        name: "Queen Elite",
+        name: "Career",
         itemListElement: [
           {
             "@type": "Offer",
@@ -263,10 +263,10 @@ export default function RootLayout({ children }) {
           richColors={true}
           toastOptions={{
             style: {
-              background: "#ec4899",
+              background: "#f26a3d",
               color: "#ffffff",
               borderRadius: "15px",
-              border: "1px solid #ec4899",
+              border: "1px solid #f26a3d",
             },
           }}
         />

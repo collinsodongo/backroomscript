@@ -34,7 +34,7 @@
   .coachingCard:hover {
     border-color: var(--secondary-color);
     transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(236, 72, 153, 0.15);
+    box-shadow: 0 16px 48px rgba(242, 106, 61, 0.15);
   }
 
   .coachingCard:hover::before {
@@ -52,7 +52,7 @@
     color: var(--light-color);
     font-size: 48px;
     margin-bottom: var(--spacing-xl);
-    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 8px 24px rgba(242, 106, 61, 0.3);
     position: relative;
   }
 
@@ -87,7 +87,7 @@
     width: 100%;
     max-width: 600px;
     padding: 18px 20px;
-    border: 2px solid rgba(236, 72, 153, 0.1);
+    border: 2px solid rgba(242, 106, 61, 0.1);
     border-radius: 16px;
     font-size: 15px;
     font-family: var(--font-family-primary);
@@ -106,9 +106,9 @@
   }
 
   .coachingTextarea:focus {
-    border-color: rgba(236, 72, 153, 0.4);
-    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.12),
-      0 0 0 4px rgba(236, 72, 153, 0.08);
+    border-color: rgba(242, 106, 61, 0.4);
+    box-shadow: 0 8px 24px rgba(242, 106, 61, 0.12),
+      0 0 0 4px rgba(242, 106, 61, 0.08);
   }
 
   .coachingSendButton,
@@ -126,13 +126,13 @@
     font-weight: var(--font-weight-bold);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.3);
+    box-shadow: 0 8px 24px rgba(242, 106, 61, 0.3);
   }
 
   .coachingSendButton:hover,
   .coachingBookButton:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(236, 72, 153, 0.4);
+    box-shadow: 0 12px 32px rgba(242, 106, 61, 0.4);
   }
 
   .responseTimes {
@@ -148,17 +148,17 @@
     padding: 24px;
     background: linear-gradient(
       135deg,
-      rgba(168, 85, 247, 0.05) 0%,
-      rgba(236, 72, 153, 0.05) 100%
+      rgba(16, 185, 129, 0.05) 0%,
+      rgba(242, 106, 61, 0.05) 100%
     );
-    border: 1px solid rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.1);
     border-radius: 16px;
     transition: all 0.3s ease;
   }
 
   .responseTimeItem:hover {
-    border-color: rgba(168, 85, 247, 0.2);
-    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.1);
+    border-color: rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.1);
   }
 
   .responseTimeItem svg {
@@ -189,7 +189,7 @@
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 2px solid rgba(236, 72, 153, 0.08);
+    border: 2px solid rgba(242, 106, 61, 0.08);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
   }
 

@@ -27,11 +27,11 @@ export default function SuccessStories() {
   const getTierName = (tier) => {
     switch (tier) {
       case "elite":
-        return "Queen Elite";
+        return "Career";
       case "pro":
-        return "Radiant Pro";
+        return "Certificate";
       default:
-        return "Starter Glow";
+        return "Foundation";
     }
   };
 

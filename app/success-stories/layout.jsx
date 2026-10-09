@@ -93,11 +93,11 @@ const breadcrumbSchema = {
 function getTierName(tier) {
   switch (tier) {
     case "elite":
-      return "BackroomScript Queen Elite";
+      return "BackroomScript Career";
     case "pro":
-      return "BackroomScript Radiant Pro";
+      return "BackroomScript Certificate";
     default:
-      return "BackroomScript Starter Glow";
+      return "BackroomScript Foundation";
   }
 }
 

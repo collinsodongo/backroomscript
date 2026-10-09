@@ -3,7 +3,7 @@ const BANNER_URL = "https://raw.githubusercontent.com/DarknessMonarch/backroomsc
 
 export const metadata = {
   title: "Plans - Choose Your Learning Plan",
-  description: "Invest in your career. Choose from Starter Glow (Free), Radiant Pro (KSh 3,499), or Queen Elite (KSh 9,999). Learn, get certified and access jobs through the companies that hire through us.",
+  description: "Invest in your career. Choose from Foundation (Free), Certificate (KSh 3,499), or Career (KSh 9,999). Learn, get certified and access jobs through the companies that hire through us.",
 
   keywords: [
     "BackroomScript pricing",
@@ -28,7 +28,7 @@ export const metadata = {
         url: BANNER_URL,
         width: 1200,
         height: 630,
-        alt: "BackroomScript Pricing Tiers - Starter Glow, Radiant Pro, Queen Elite"
+        alt: "BackroomScript Pricing Tiers - Foundation, Certificate, Career"
       }
     ],
   },
@@ -73,29 +73,29 @@ const tiersSchema = {
     {
       "@type": "Offer",
       "position": 1,
-      "name": "Starter Glow",
+      "name": "Foundation",
       "description": "Start learning for free and begin your path to certification",
       "price": "0",
       "priceCurrency": "KES",
       "availability": "https://schema.org/InStock",
       "itemOffered": {
         "@type": "Product",
-        "name": "Starter Glow Tier",
+        "name": "Foundation Tier",
         "description": "Access to 1 lesson per day and email support"
       }
     },
     {
       "@type": "Offer",
       "position": 2,
-      "name": "Radiant Pro",
+      "name": "Certificate",
       "description": "Unlock the full course and get on the path to job placement",
       "price": "999",
       "priceCurrency": "KES",
       "availability": "https://schema.org/InStock",
       "itemOffered": {
         "@type": "Product",
-        "name": "Radiant Pro Tier",
-        "description": "WhatsApp community access, 20+ premium lessons, bookmark your favorites, access previous lessons, everything in Starter Glow, priority support (12h response) and certification preparation with job access through your profile",
+        "name": "Certificate Tier",
+        "description": "WhatsApp community access, 20+ premium lessons, bookmark your favorites, access previous lessons, everything in Foundation, priority support (12h response) and certification preparation with job access through your profile",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -106,15 +106,15 @@ const tiersSchema = {
     {
       "@type": "Offer",
       "position": 3,
-      "name": "Queen Elite",
+      "name": "Career",
       "description": "Complete training with mentorship and priority job access",
       "price": "3499",
       "priceCurrency": "KES",
       "availability": "https://schema.org/InStock",
       "itemOffered": {
         "@type": "Product",
-        "name": "Queen Elite Tier",
-        "description": "You get unlimited expert lessons, all categories unlocked, monthly content updates, direct WhatsApp support, lifetime content updates, everything included in Radiant Pro, a 1-on-1 mentorship session (60 minutes), and priority access to jobs from companies that hire through us",
+        "name": "Career Tier",
+        "description": "You get unlimited expert lessons, all categories unlocked, monthly content updates, direct WhatsApp support, lifetime content updates, everything included in Certificate, a 1-on-1 mentorship session (60 minutes), and priority access to jobs from companies that hire through us",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5.0",

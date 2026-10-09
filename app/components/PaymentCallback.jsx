@@ -112,7 +112,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     padding: "20px",
-    background: "linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #f3e8ff 100%)",
+    background: "linear-gradient(135deg, #fff5f0 0%, #ffe8df 50%, #d1fae5 100%)",
   },
   card: {
     background: "rgba(255, 255, 255, 0.8)",
@@ -128,7 +128,7 @@ const styles = {
   },
   iconVerifying: {
     fontSize: "72px",
-    color: "#a855f7",
+    color: "#10b981",
     marginBottom: "24px",
     animation: "spin 2s linear infinite",
   },
@@ -147,7 +147,7 @@ const styles = {
     fontWeight: "700",
     color: "#111827",
     marginBottom: "12px",
-    background: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
+    background: "linear-gradient(135deg, #f26a3d 0%, #34d399 100%)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
     backgroundClip: "text",
@@ -160,8 +160,8 @@ const styles = {
   loader: {
     width: "40px",
     height: "40px",
-    border: "4px solid rgba(168, 85, 247, 0.2)",
-    borderTop: "4px solid #a855f7",
+    border: "4px solid rgba(16, 185, 129, 0.2)",
+    borderTop: "4px solid #10b981",
     borderRadius: "50%",
     margin: "24px auto 0",
     animation: "spin 1s linear infinite",

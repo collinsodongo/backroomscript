@@ -1,0 +1,45 @@
+.ctaBanner {
+  gap: 1.5rem;
+  display: flex;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  border-radius: 24px;
+  background: #0f172a;
+}
+
+.ctaText h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.ctaText p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ctaLink {
+  padding: 14px 32px;
+  color: #ffffff;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+  background: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.ctaLink:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  background: var(--secondary-hover-color);
+}
+
+@media only screen and (min-width: 48em) {
+  .ctaBanner {
+    padding: 3rem;
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

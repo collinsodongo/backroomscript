@@ -52,7 +52,7 @@ const navigationItems = [
     icon: IoChatbubbles,
     label: "Coaching & Support",
     requiresElite: true,
-    lockMessage: "Upgrade to Queen Elite for coaching & support",
+    lockMessage: "Upgrade to Career for coaching & support",
   },
   {
     id: "success-stories",
@@ -149,7 +149,7 @@ export default function Sidebar({ username, currentTier, currentTierInfo, active
           <div className={styles.userProfile}>
             <ProfilePicture />
             <div className={styles.userInfo}>
-              <h3>{username || "Queen"}</h3>
+              <h3>{username || "Student"}</h3>
               <span className={styles.userTier}>{currentTierInfo?.name || "Loading..."}</span>
             </div>
           </div>

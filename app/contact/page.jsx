@@ -241,7 +241,7 @@ export default function ContactUs() {
           </li>
        
           <li>
-            <strong>Mentorship Sessions:</strong> Queen Elite students can schedule
+            <strong>Mentorship Sessions:</strong> Career students can schedule
             their 1-on-1 mentorship session via email or WhatsApp
           </li>
           <li>
@@ -254,7 +254,7 @@ export default function ContactUs() {
       <div className={styles.section}>
         <p>
           <strong>Response Time:</strong> We aim to respond to all inquiries
-          within 24 hours during business days. For urgent matters, Queen Elite
+          within 24 hours during business days. For urgent matters, Career
           students can reach us directly via WhatsApp.
         </p>
       </div>

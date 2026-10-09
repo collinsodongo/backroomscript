@@ -1,47 +1,24 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SuccessWoman from "@/public/assets/successWoman.png";
 import styles from "@/app/style/homeSection.module.css";
+import { usePublicStatsStore } from "@/app/store/PublicStatsStore";
 import {
   IoSparkles as SparklesIcon,
   IoHeart as HeartIcon,
   IoChevronForward as ChevronIcon,
 } from "react-icons/io5";
 
-const SERVER_API = process.env.NEXT_PUBLIC_SERVER_API;
-
 export default function HomeSection() {
-  const [stats, setStats] = useState({
-    totalUsers: 0,
-    weeklyUsers: 0,
-    weeklyGrowth: 0,
-  });
-  const [isLoading, setIsLoading] = useState(true);
+  const stats = usePublicStatsStore((state) => state.stats);
+  const isLoading = usePublicStatsStore((state) => state.loading);
+  const fetchStats = usePublicStatsStore((state) => state.fetchStats);
 
   useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const response = await fetch(`${SERVER_API}/auth/stats/public`);
-        const data = await response.json();
-
-        if (data.status === "success") {
-          setStats({
-            totalUsers: data.data.totalUsers,
-            weeklyUsers: data.data.weeklyUsers,
-            weeklyGrowth: data.data.weeklyGrowth,
-          });
-        }
-      } catch (error) {
-        console.error("Error fetching stats:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     fetchStats();
-  }, []);
+  }, [fetchStats]);
 
   return (
     <div className={styles.homeSection}>

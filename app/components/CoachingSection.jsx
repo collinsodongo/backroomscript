@@ -66,7 +66,7 @@ export default function CoachingSection({ currentTier, currentTierInfo }) {
           </div>
           <h2>1-on-1 Mentorship Session</h2>
           <p>
-            As a Queen Elite student, you have access to a 60-minute mentorship
+            As a Career student, you have access to a 60-minute mentorship
             session to prepare for your certification and job placement!
           </p>
           <button className={styles.coachingBookButton}>

@@ -1,0 +1,39 @@
+.sectionHeading {
+  gap: 0.75rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: #0f172a;
+  font-weight: var(--font-weight-bold);
+}
+
+.sectionHeading h2 span {
+  color: var(--primary-color);
+}
+
+.underline {
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--secondary-color);
+}
+
+.sectionHeading p {
+  margin: 0;
+  max-width: 560px;
+  color: var(--warm-gray);
+}
+
+@media only screen and (min-width: 48em) {
+  .sectionHeading h2 {
+    font-size: 2.5rem;
+  }
+}

@@ -23,8 +23,8 @@ const generateAvatar = (username) => {
 const formatTierRole = (tier) => {
   const tierRoles = {
     starter: "Starter Member",
-    pro: "Radiant Pro Member",
-    elite: "Queen Elite Member",
+    pro: "Certificate Member",
+    elite: "Career Member",
   };
   return tierRoles[tier] || "Member";
 };

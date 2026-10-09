@@ -7,8 +7,8 @@ export default function manifest() {
     scope: '/',
     display: 'standalone',
     orientation: 'portrait',
-    background_color: '#fef3f8',
-    theme_color: '#fef3f8',
+    background_color: '#fff5f0',
+    theme_color: '#fff5f0',
     categories: ['education', 'business', 'jobs', 'personal development'],
     
     icons: [
@@ -50,23 +50,23 @@ export default function manifest() {
     
     shortcuts: [
       {
-        name: 'Starter Glow',
+        name: 'Foundation',
         short_name: 'Starter',
-        description: 'View Starter Glow tier',
+        description: 'View Foundation tier',
         url: '/tiers/starter',
         icons: [{ src: '/assets/logo.png', sizes: '96x96' }]
       },
       {
-        name: 'Radiant Pro',
+        name: 'Certificate',
         short_name: 'Pro',
-        description: 'View Radiant Pro tier',
+        description: 'View Certificate tier',
         url: '/tiers/pro',
         icons: [{ src: '/assets/logo.png', sizes: '96x96' }]
       },
       {
-        name: 'Queen Elite',
+        name: 'Career',
         short_name: 'Elite',
-        description: 'View Queen Elite tier',
+        description: 'View Career tier',
         url: '/tiers/elite',
         icons: [{ src: '/assets/logo.png', sizes: '96x96' }]
       },

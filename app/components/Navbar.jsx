@@ -59,9 +59,9 @@ const useNavLinks = () => {
           label: "Plans",
           hasDropdown: true,
           dropdown: [
-            { name: "Starter Glow", href: "/tiers" },
-            { name: "Radiant Pro", href: "/tiers" },
-            { name: "Queen Elite", href: "/tiers" },
+            { name: "Foundation", href: "/tiers" },
+            { name: "Certificate", href: "/tiers" },
+            { name: "Career", href: "/tiers" },
           ],
           title: "Choose Your Learning Plan",
           description: "Invest in your career. Learn, get certified, get hired.",

@@ -89,13 +89,13 @@
 
 .navLink:hover {
   color: var(--primary-color);
-  background: rgba(236, 72, 153, 0.05);
+  background: rgba(242, 106, 61, 0.05);
 }
 
 .activeNavLink {
   color: var(--primary-color);
   font-weight: var(--font-weight-semibold);
-  background: rgba(236, 72, 153, 0.1);
+  background: rgba(242, 106, 61, 0.1);
 }
 
 .dropdown {
@@ -162,7 +162,7 @@
 
 .dropdownItem:hover {
   color: var(--primary-color);
-  background: rgba(236, 72, 153, 0.08);
+  background: rgba(242, 106, 61, 0.08);
   border: var(--glass-border-pink);
   transform: translateX(4px);
 }
@@ -467,7 +467,7 @@
   }
 
   .navLink:hover {
-    background: rgba(236, 72, 153, 0.08);
+    background: rgba(242, 106, 61, 0.08);
   }
 
   .dropdown {

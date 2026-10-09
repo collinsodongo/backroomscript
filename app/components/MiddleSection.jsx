@@ -6,6 +6,9 @@ import { useSubscriptionStore } from "@/app/store/SubscriptionStore";
 import { useAuthStore } from "@/app/store/AuthStore";
 import { toast } from "sonner";
 import PricingGrid from "@/app/components/PricingGrid";
+import SectionHeading from "@/app/components/SectionHeading";
+import FeatureCard from "@/app/components/FeatureCard";
+import CtaBanner from "@/app/components/CtaBanner";
 import styles from "@/app/style/middleSection.module.css";
 import {
   IoHeart as HeartIcon,
@@ -124,12 +127,11 @@ export default function MiddleSection() {
     <section className={styles.middleSection}>
       <div className={styles.middleContainer}>
         <div className={styles.howItWorksSection}>
-          <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Your Path To A Job</h2>
-            <p className={styles.sectionSubtitle}>
-              Three simple steps from learning to employment
-            </p>
-          </div>
+          <SectionHeading
+            before="The way you join our"
+            accent="school"
+            subtitle="Three simple steps from learning to employment"
+          />
 
           <div className={styles.stepsGrid}>
             {steps.map((step, i) => (
@@ -139,6 +141,18 @@ export default function MiddleSection() {
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDescription}>{step.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <SectionHeading
+            before="Why students choose"
+            accent="BackroomScript"
+          />
+          <div className={styles.featuresGrid}>
+            {features.map((feature) => (
+              <FeatureCard key={feature.title} {...feature} />
             ))}
           </div>
         </div>
@@ -155,6 +169,13 @@ export default function MiddleSection() {
             getTierLevel={getTierLevel}
           />
         </div>
+
+        <CtaBanner
+          title="Ready to learn, get certified and get hired?"
+          description="Join thousands of students building their careers through our school."
+          href="/authentication/signup"
+          label="Create Free Account"
+        />
       </div>
     </section>
   );

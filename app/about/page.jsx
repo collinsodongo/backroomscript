@@ -87,7 +87,7 @@ export default function About() {
       <div className={styles.section}>
         <h2>Getting Started with BackroomScript</h2>
         <p>
-          When choosing your plan at BackroomScript, consider your career goals, learning style, and budget. We recommend starting with our free Starter Glow plan if you are new, then upgrading to Radiant Pro or Queen Elite as you move towards certification. Our plan descriptions and success stories will help you make an informed decision.
+          When choosing your plan at BackroomScript, consider your career goals, learning style, and budget. We recommend starting with our free Foundation plan if you are new, then upgrading to Certificate or Career as you move towards certification. Our plan descriptions and success stories will help you make an informed decision.
         </p>
       </div>
       <div className={styles.section}>
