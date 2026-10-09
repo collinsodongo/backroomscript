@@ -18,7 +18,7 @@ export const useSubscriptionStore = create((set, get) => ({
       name: "Starter Glow",
       price: 0, 
       currency: "KSh",
-      description: "Perfect for beginning your conversation journey",
+      description: "Start learning for free and begin your path to certification",
       features: [
         "Email support (24h response)",
         "Access to 1 basic template per day"
@@ -39,9 +39,9 @@ export const useSubscriptionStore = create((set, get) => ({
       name: "Radiant Pro",
       price: null, 
       currency: "KSh",
-      description: "Elevate your communication with confidence",
+      description: "Unlock the full course and get on the path to job placement",
       features: [
-        "Community support",
+        "WhatsApp community access",
         "20+ Premium templates",
         "Bookmark your favorites",
         "Access previous templates",
@@ -49,7 +49,7 @@ export const useSubscriptionStore = create((set, get) => ({
         "Advanced flirting techniques",
         "Relationship building methods",
         "Priority support (12h response)",
-        "Teaching strategies to make it on tinder and the likes",
+        "Certification preparation and job access through your profile",
       ],
       limits: {
         templatesPerDay: "unlimited",
@@ -67,18 +67,18 @@ export const useSubscriptionStore = create((set, get) => ({
       name: "Queen Elite",
       price: null, 
       currency: "KSh",
-      description: "Complete mastery with personal coaching",
+      description: "Complete training with mentorship and priority job access",
       features: [
         "Unlimited Expert templates",
         "All categories unlocked",
         "Monthly content updates",
-        "Direct Telegram support",
+        "Direct WhatsApp support",
         "Custom template requests",
         "Lifetime content updates",
         "Everything on Radiant Pro",
         "Priority feature requests",
-        "1-on-1 coaching session (60min)",
-        "Access to hidden dating site that your success is higher than average",
+        "1-on-1 mentorship session (60min)",
+        "Priority access to jobs from companies that hire through us",
 
       ],
       limits: {

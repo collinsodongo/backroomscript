@@ -50,21 +50,21 @@ export default function HomeSection() {
           <div className={styles.heroContent}>
             <div className={styles.badge}>
               <HeartIcon className={styles.badgeIcon} />
-              <span>Join 2,251 + Women Finding Their Voice</span>
+              <span>Join 2,251+ Students Building Their Careers</span>
             </div>
 
             <h1 className={styles.heroTitle}>
-              Speak With Confidence.
+              Learn. Get Certified.
               <br />
               <span className={styles.heroTitleGradient}>
-                Bloom Into Your Power
+                Get Hired Through Us
               </span>
             </h1>
 
             <p className={styles.heroDescription}>
-              Master how to have <span>real conversations</span> that create
-              connections, whether you're dating, starting a business, or
-              expanding your influence.
+              Learn with our school, pass the certification, and access
+              <span> jobs through your profile</span> with our wider range of
+              companies that hire through us.
             </p>
 
             <div className={styles.ctaButtons}>
@@ -80,15 +80,15 @@ export default function HomeSection() {
             <div className={styles.statsGrid}>
               <div className={styles.statCard}>
                 <h1>200+</h1>
-                <p>QueensRising</p>
+                <p>Students</p>
               </div>
               <div className={styles.statCard}>
                 <h1>300%</h1>
-                <p>Confidence Boost</p>
+                <p>Skills Growth</p>
               </div>
               <div className={styles.statCard}>
                 <h1>1000+</h1>
-                <p>Templates</p>
+                <p>Lessons</p>
               </div>
             </div>
           </div>
@@ -97,14 +97,14 @@ export default function HomeSection() {
             <div className={styles.imageWrapper}>
               <Image
                 src={SuccessWoman}
-                alt="Confident woman"
+                alt="Successful graduate"
                 className={styles.mainImage}
                 priority
               />
 
               <div className={styles.floatingCard}>
                 <div className={styles.cardHeader}>
-                  <span className={styles.cardTitle}>New Queens</span>
+                  <span className={styles.cardTitle}>New Students</span>
                   <span className={styles.cardBadge}>
                     {isLoading ? "..." : `${stats.weeklyGrowth > 0 ? "+" : ""}${stats.weeklyGrowth}%`} {stats.weeklyGrowth >= 0 ? "↑" : "↓"}
                   </span>
@@ -133,7 +133,7 @@ export default function HomeSection() {
                   <div className={styles.avatar}>👸🏿</div>
                 </div>
                 <span className={styles.mentorsText}>
-                  100+ Top Mentor
+                  100+ Top Instructors
                 </span>
               </div>
             </div>

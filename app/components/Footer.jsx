@@ -15,35 +15,39 @@ import {
 import { IoCall as PhoneIcon } from "react-icons/io5";
 import {
   FaApple as AppleIcon,
-  FaTelegram as TelegramIcon,
+  FaWhatsapp as WhatsappIcon,
 } from "react-icons/fa";
 import { FaTiktok as TiktokIcon } from "react-icons/fa6";
 import { BsInstagram as InstagramIcon } from "react-icons/bs";
 import { IoLogoGooglePlaystore as PlaystoreIcon } from "react-icons/io5";
 import { IoShieldCheckmark as ShieldIcon } from "react-icons/io5";
+import { useCommunityStore } from "@/app/store/CommunityStore";
+
+const socialLinks = [
+  { name: "instagram", label: "Instagram", Icon: InstagramIcon },
+  { name: "tiktok", label: "TikTok", Icon: TiktokIcon },
+  { name: "whatsapp", label: "WhatsApp", Icon: WhatsappIcon },
+];
+
+const paymentLogos = [
+  { src: MasterCard, alt: "Mastercard" },
+  { src: VisaCard, alt: "Visa" },
+  { src: MpesaLogo, alt: "M-Pesa" },
+  { src: AirtelMoney, alt: "Airtel Money" },
+];
 
 export default function Footer() {
-  const handleInstagramClick = () => {
-    window.open("https://www.instagram.com/backroomscript", "_blank");
-  };
-
-  const handleTiktokClick = () => {
-    window.open("https://www.tiktok.com/@backroomscript", "_blank");
-  };
-
-  const handleTelegramClick = () => {
-    window.open("https://t.me/backroomscript", "_blank");
-  };
+  const openLink = useCommunityStore((state) => state.openLink);
 
   return (
     <footer className={styles.footer}>
       <div className={styles.newsletter}>
         <div className={styles.newsletterContent}>
           <div className={styles.newsletterText}>
-            <h3>Join Our Confidence Community</h3>
+            <h3>Join Our Learning Community</h3>
             <p>
-              Stay connected with BackroomScript! by Subscribing to our
-              newsletter today to get updates and news early
+              Stay connected with BackroomScript by subscribing to our
+              newsletter to get course updates and job opportunities early
             </p>
           </div>
           <div className={styles.newsletterForm}>
@@ -62,33 +66,22 @@ export default function Footer() {
           <div className={styles.footerSection}>
             <h4 className={styles.brandName}>BackroomScript</h4>
             <p className={styles.brandDescription}>
-              Empowering conversations, authentic connections, and unshakeable
-              confidence for women worldwide.
+              A school that trains you, certifies you, and connects you to
+              jobs with the companies that hire through us.
             </p>
             <div className={styles.socialMedia}>
               <h5>Social Media</h5>
               <div className={styles.socialIcons}>
-                <button
-                  onClick={handleInstagramClick}
-                  className={styles.socialIcon}
-                  aria-label="Instagram"
-                >
-                  <InstagramIcon />
-                </button>
-                <button
-                  onClick={handleTiktokClick}
-                  className={styles.socialIcon}
-                  aria-label="TikTok"
-                >
-                  <TiktokIcon />
-                </button>
-                <button
-                  onClick={handleTelegramClick}
-                  className={styles.socialIcon}
-                  aria-label="Telegram"
-                >
-                  <TelegramIcon />
-                </button>
+                {socialLinks.map(({ name, label, Icon }) => (
+                  <button
+                    key={name}
+                    onClick={() => openLink(name)}
+                    className={styles.socialIcon}
+                    aria-label={label}
+                  >
+                    <Icon />
+                  </button>
+                ))}
               </div>
             </div>
           </div>
@@ -135,8 +128,8 @@ export default function Footer() {
           <div className={styles.footerSection}>
             <h4>Get in Touch</h4>
             <p className={styles.appDescription}>
-              Join thousands of women who've transformed their communication
-              confidence
+              Join thousands of students learning, getting certified, and landing
+              jobs
             </p>
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
@@ -180,42 +173,17 @@ export default function Footer() {
               <span>Secure Payment Methods</span>
             </div>
             <div className={styles.paymentLogos}>
-              <div className={styles.paymentLogo}>
-                <Image
-                  src={MasterCard}
-                  alt="Mastercard"
-                  width={45}
-                  height={28}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-              <div className={styles.paymentLogo}>
-                <Image
-                  src={VisaCard}
-                  alt="Visa"
-                  width={45}
-                  height={28}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-              <div className={styles.paymentLogo}>
-                <Image
-                  src={MpesaLogo}
-                  alt="M-Pesa"
-                  width={45}
-                  height={28}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
-              <div className={styles.paymentLogo}>
-                <Image
-                  src={AirtelMoney}
-                  alt="Airtel Money"
-                  width={45}
-                  height={28}
-                  style={{ objectFit: "contain" }}
-                />
-              </div>
+              {paymentLogos.map(({ src, alt }) => (
+                <div key={alt} className={styles.paymentLogo}>
+                  <Image
+                    src={src}
+                    alt={alt}
+                    width={45}
+                    height={28}
+                    className={styles.paymentLogoImage}
+                  />
+                </div>
+              ))}
             </div>
           </div>
 

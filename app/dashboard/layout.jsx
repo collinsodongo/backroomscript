@@ -1,8 +1,8 @@
 const SITE_URL = "https://backroomscript.com";
 
 export const metadata = {
-  title: "Dashboard - Your Conversation Templates",
-  description: "Access your BackroomScript dashboard to view templates, manage your tier, track progress, and master confident conversations.",
+  title: "Dashboard - Your Courses",
+  description: "Access your BackroomScript dashboard to view your courses, manage your plan, track progress, and prepare for certification and jobs.",
 
   robots: {
     index: false,

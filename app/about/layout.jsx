@@ -2,25 +2,25 @@ const SITE_URL = "http://backroomscript.com";
 const BANNER_URL = "https://raw.githubusercontent.com/DarknessMonarch/backroomscript/refs/heads/master/public/assets/banner.png";
 
 export const metadata = {
-  title: "About Us - Empowering Women Through Confident Communication",
-  description: "Learn about BackroomScript's mission to empower women with expertly crafted conversation templates. Built by women, for women. Helping 2,251+ queens find their voice in dating, business & social settings.",
+  title: "About Us - Learn, Get Certified & Get Hired",
+  description: "Learn about BackroomScript, a school that trains and certifies you, then connects you to jobs with the companies that hire through us. Join 2,251+ students.",
 
   keywords: [
     "about BackroomScript",
-    "women communication platform",
-    "conversation confidence mission",
-    "dating template creators",
-    "women empowerment company",
-    "authentic conversation experts",
-    "communication coaching platform",
-    "women-led business",
-    "conversation mastery story",
+    "online school",
+    "certification courses",
+    "job placement",
+    "career training",
+    "hiring partners",
+    "student community",
+    "skills training",
+    "learn and get hired",
     "BackroomScript team"
   ],
 
   openGraph: {
-    title: "About BackroomScript - Empowering Women Through Confident Communication",
-    description: "Our mission: Help women master conversations that matter. From dating to boardrooms, we provide templates that work.",
+    title: "About BackroomScript - Learn, Get Certified & Get Hired",
+    description: "Our mission: Help students learn, pass the certification and access jobs through the companies that hire through us.",
     url: `${SITE_URL}/about`,
     type: "website",
     images: [
@@ -28,15 +28,15 @@ export const metadata = {
         url: BANNER_URL,
         width: 1200,
         height: 630,
-        alt: "About BackroomScript - Women's Communication Empowerment Platform"
+        alt: "About BackroomScript - Online School With Job Access"
       }
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "About BackroomScript - Empowering Women Through Confident Communication",
-    description: "Built by women, for women. Helping 2,251+ queens find their voice.",
+    title: "About BackroomScript - Learn, Get Certified & Get Hired",
+    description: "Learn, get certified and get hired. Join 2,251+ students.",
     images: [BANNER_URL],
   },
 
@@ -70,21 +70,21 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "name": "About BackroomScript",
-  "description": "BackroomScript is your premier destination for conversation confidence and authentic connection",
+  "description": "BackroomScript is a school that trains you, certifies you and connects you to jobs",
   "url": `${SITE_URL}/about`,
   "mainEntity": {
     "@type": "Organization",
     "name": "BackroomScript",
     "url": SITE_URL,
     "logo": `${SITE_URL}/assets/logo.png`,
-    "description": "Premier conversation templates and communication strategies for women seeking confidence in dating, business, and social interactions",
+    "description": "An online school that trains and certifies students, then connects them to jobs with the companies that hire through us",
     "foundingDate": "2023",
     "founder": {
       "@type": "Organization",
       "name": "BackroomScript Team"
     },
     "areaServed": "Worldwide",
-    "slogan": "Master confident conversations. Built by women, for women."
+    "slogan": "Learn. Get certified. Get hired."
   }
 };
 
@@ -98,7 +98,7 @@ const faqSchema = {
       "name": "What is BackroomScript?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "BackroomScript is your premier destination for conversation confidence and authentic connection. We specialize in providing women with expertly crafted conversation templates and communication strategies for dating, business, and social settings."
+        "text": "BackroomScript is a school that trains you, certifies you and connects you to jobs. Once you learn and pass the certification, you can access jobs through your profile with our wider range of hiring companies."
       }
     },
     {
@@ -106,15 +106,15 @@ const faqSchema = {
       "name": "Why choose BackroomScript?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer authentic, tested templates created by women who understand unique communication challenges. You get lifetime access to all resources, excellent customer support, and templates that have helped thousands build unshakeable confidence."
+        "text": "We give students a clear path from learning to employment, with tested course material, instructor support and a WhatsApp community. Certified students access jobs from the companies that hire through us."
       }
     },
     {
       "@type": "Question",
-      "name": "What template categories are available?",
+      "name": "What courses are available?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We offer templates across Dating & Flirting, Business Communication Scripts, Social Confidence Builders, Content Creation Guides, and Professional Networking Tools."
+        "text": "We offer courses across Communication Skills, Business Communication, Social Skills, Content Creation and Professional Networking."
       }
     }
   ]

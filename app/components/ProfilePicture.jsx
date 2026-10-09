@@ -17,6 +17,7 @@ export default function ProfilePicture({ size = "medium", editable = true }) {
   
   const [preview, setPreview] = useState(null);
   const [uploading, setUploading] = useState(false);
+  const [imageFailed, setImageFailed] = useState(false);
   const fileInputRef = useRef(null);
 
   const isLocked = currentTier === "starter";
@@ -62,24 +63,18 @@ export default function ProfilePicture({ size = "medium", editable = true }) {
       className={`${styles.avatarWrapper} ${isLocked ? styles.locked : ""} ${isEditable ? styles.editable : ""}`}
       onClick={handleClick}
     >
-      {displayImage ? (
+      {displayImage && !imageFailed ? (
         <img
           src={displayImage}
           alt={`${username}'s profile picture` || "Profile"}
           className={styles.avatarImage}
-          onError={(e) => {
-            e.target.style.display = 'none';
-            e.target.nextSibling.style.display = 'flex';
-          }}
+          onError={() => setImageFailed(true)}
         />
-      ) : null}
-
-      <div
-        className={styles.avatarPlaceholder}
-        style={{ display: displayImage ? 'none' : 'flex' }}
-      >
-        {username?.charAt(0).toUpperCase() || "Q"}
-      </div>
+      ) : (
+        <div className={styles.avatarPlaceholder}>
+          {username?.charAt(0).toUpperCase() || "Q"}
+        </div>
+      )}
 
       {isEditable && (
         <div className={styles.avatarOverlay}>

@@ -124,11 +124,11 @@ export default function Dashboard() {
   };
 
   const tabSubtitles = {
-    templates: "Master confident conversations with our expert templates",
+    templates: "Learn with our course materials and get certified to unlock jobs",
     previous: "Review templates you've accessed before",
     bookmarks: "Your saved favorite templates",
-    coaching: "Get personalized guidance from our experts",
-    "success-stories": "Share your success story and inspire others",
+    coaching: "Get personalized guidance from our instructors",
+    "success-stories": "Share how your certification and job placement changed your life",
     "payment-methods": "Save your cards securely for faster upgrades",
   };
 
@@ -609,7 +609,7 @@ export default function Dashboard() {
               <div className={cardStyles.cardPickerHeader}>
                 <h2>Choose Payment Method</h2>
                 <p>
-                  Upgrading to {pendingTier.name} — {pendingTier.currency}{" "}
+                  Upgrading to {pendingTier.name}, {pendingTier.currency}{" "}
                   {pendingTier.price?.toLocaleString()}
                 </p>
               </div>

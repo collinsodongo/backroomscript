@@ -2,25 +2,25 @@ const SITE_URL = "https://backroomscript.com";
 const BANNER_URL = "https://raw.githubusercontent.com/DarknessMonarch/backroomscript/refs/heads/master/public/assets/banner.png";
 
 export const metadata = {
-  title: "Pricing Tiers - Choose Your Glow Level",
-  description: "One-time investment in yourself. Lifetime confidence. Choose from Starter Glow (Free), Radiant Pro (KSh 3,499), or Queen Elite (KSh 9,999). Premium conversation templates for dating, business & social confidence.",
+  title: "Plans - Choose Your Learning Plan",
+  description: "Invest in your career. Choose from Starter Glow (Free), Radiant Pro (KSh 3,499), or Queen Elite (KSh 9,999). Learn, get certified and access jobs through the companies that hire through us.",
 
   keywords: [
     "BackroomScript pricing",
-    "conversation templates pricing",
-    "dating confidence packages",
-    "communication coaching tiers",
-    "women empowerment pricing",
-    "conversation starter packages",
-    "business communication pricing",
-    "social confidence investment",
-    "premium templates cost",
-    "conversation mastery tiers"
+    "course pricing",
+    "certification packages",
+    "school plans",
+    "job access plans",
+    "student plans",
+    "business course pricing",
+    "career investment",
+    "course cost",
+    "learning plans"
   ],
 
   openGraph: {
-    title: "Pricing Tiers - Choose Your Glow Level | BackroomScript",
-    description: "One-time investment. Lifetime confidence. From free starter templates to elite 1-on-1 coaching. Find your perfect tier.",
+    title: "Plans - Choose Your Learning Plan | BackroomScript",
+    description: "Invest in your career. From free starter lessons to elite 1-on-1 mentorship and priority job access. Find your plan.",
     url: `${SITE_URL}/tiers`,
     type: "website",
     images: [
@@ -35,8 +35,8 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pricing Tiers - Choose Your Glow Level | BackroomScript",
-    description: "One-time investment. Lifetime confidence. From free starter templates to elite 1-on-1 coaching.",
+    title: "Plans - Choose Your Learning Plan | BackroomScript",
+    description: "Invest in your career. From free starter lessons to elite mentorship and priority job access.",
     images: [BANNER_URL],
   },
 
@@ -74,28 +74,28 @@ const tiersSchema = {
       "@type": "Offer",
       "position": 1,
       "name": "Starter Glow",
-      "description": "Perfect for beginning your conversation journey",
+      "description": "Start learning for free and begin your path to certification",
       "price": "0",
       "priceCurrency": "KES",
       "availability": "https://schema.org/InStock",
       "itemOffered": {
         "@type": "Product",
         "name": "Starter Glow Tier",
-        "description": "Access to 1 template and Email support"
+        "description": "Access to 1 lesson per day and email support"
       }
     },
     {
       "@type": "Offer",
       "position": 2,
       "name": "Radiant Pro",
-      "description": "Elevate your communication with confidence",
+      "description": "Unlock the full course and get on the path to job placement",
       "price": "999",
       "priceCurrency": "KES",
       "availability": "https://schema.org/InStock",
       "itemOffered": {
         "@type": "Product",
         "name": "Radiant Pro Tier",
-        "description": "Community support, 20+ Premium templates, Bookmark your favorites, Access previous templates, Everything in Starter Glow, Advanced flirting techniques, Relationship building methods, Priority support (12h response) and Teaching strategies to make it on tinder and the likes",
+        "description": "WhatsApp community access, 20+ premium lessons, bookmark your favorites, access previous lessons, everything in Starter Glow, priority support (12h response) and certification preparation with job access through your profile",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "4.9",
@@ -107,14 +107,14 @@ const tiersSchema = {
       "@type": "Offer",
       "position": 3,
       "name": "Queen Elite",
-      "description": "Complete mastery with personal coaching",
+      "description": "Complete training with mentorship and priority job access",
       "price": "3499",
       "priceCurrency": "KES",
       "availability": "https://schema.org/InStock",
       "itemOffered": {
         "@type": "Product",
         "name": "Queen Elite Tier",
-        "description": "You get unlimited expert templates, all categories unlocked, monthly content updates, direct Telegram support, custom template requests, lifetime content updates, everything included in Radiant Pro, priority feature requests, a 1-on-1 coaching session (60 minutes), and access to a hidden dating site where your success is higher than average",
+        "description": "You get unlimited expert lessons, all categories unlocked, monthly content updates, direct WhatsApp support, lifetime content updates, everything included in Radiant Pro, a 1-on-1 mentorship session (60 minutes), and priority access to jobs from companies that hire through us",
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5.0",

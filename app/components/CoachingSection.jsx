@@ -8,11 +8,14 @@ import {
   IoCalendar,
   IoCheckmarkCircle,
 } from "react-icons/io5";
-import { FaCrown, FaTelegram } from "react-icons/fa";
+import { FaCrown, FaWhatsapp } from "react-icons/fa";
 import { toast } from "sonner";
+import { useCommunityStore } from "@/app/store/CommunityStore";
 
 export default function CoachingSection({ currentTier, currentTierInfo }) {
   const [replyText, setReplyText] = useState("");
+  const community = useCommunityStore((state) => state.community);
+  const openCommunity = useCommunityStore((state) => state.openCommunity);
 
   const handleReplySubmit = () => {
     if (!replyText.trim()) return;
@@ -20,37 +23,28 @@ export default function CoachingSection({ currentTier, currentTierInfo }) {
     setReplyText("");
   };
 
-  const handleTelegramClick = () => {
-    window.open("https://t.me/backroomscript", "_blank");
-  };
-
   return (
     <div className={styles.coachingSection}>
-      {currentTier === "elite" && (
-        <div className={styles.coachingCard}>
-          <div className={styles.coachingIcon}>
-            <FaTelegram />
-          </div>
-          <h2>Join Our Telegram Community</h2>
-          <p>
-            Connect with other queens, get instant support, and access exclusive
-            content in our private Telegram group.
-          </p>
-          <button className={styles.coachingBookButton} onClick={handleTelegramClick}>
-            <FaTelegram />
-            <span>Join Telegram Group</span>
-          </button>
+      <div className={styles.coachingCard}>
+        <div className={styles.coachingIcon}>
+          <FaWhatsapp />
         </div>
-      )}
+        <h2>{community.title}</h2>
+        <p>{community.description}</p>
+        <button className={styles.coachingBookButton} onClick={openCommunity}>
+          <FaWhatsapp />
+          <span>{community.button}</span>
+        </button>
+      </div>
 
       <div className={styles.coachingCard}>
         <div className={styles.coachingIcon}>
           <IoChatbubbles />
         </div>
-        <h2>Ask Our Experts</h2>
+        <h2>Ask Our Instructors</h2>
         <p>
-          Have questions about using a template? Need personalized advice? Our
-          team is here to help!
+          Have questions about your course? Need guidance on your
+          certification? Our team is here to help!
         </p>
         <textarea
           className={styles.coachingTextarea}
@@ -70,10 +64,10 @@ export default function CoachingSection({ currentTier, currentTierInfo }) {
           <div className={styles.coachingIcon}>
             <FaCrown />
           </div>
-          <h2>1-on-1 Coaching Session</h2>
+          <h2>1-on-1 Mentorship Session</h2>
           <p>
-            As a Queen Elite member, you have access to a 60-minute coaching
-            session!
+            As a Queen Elite student, you have access to a 60-minute mentorship
+            session to prepare for your certification and job placement!
           </p>
           <button className={styles.coachingBookButton}>
             <IoCalendar />

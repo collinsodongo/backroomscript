@@ -37,9 +37,9 @@ export default function PricingGrid({
     <div className={styles.container}>
       {showHeader && (
         <div className={styles.header}>
-          <h2 className={styles.title}>Choose Your Glow Level</h2>
+          <h2 className={styles.title}>Choose Your Learning Plan</h2>
           <p className={styles.subtitle}>
-            One-time investment in yourself. Lifetime confidence.
+            Invest in your career. Learn, get certified, get hired.
           </p>
           <div className={styles.guaranteeBadge}>
             <CheckIcon />

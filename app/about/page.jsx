@@ -36,76 +36,76 @@ export default function About() {
       </div>
       <div className={styles.section}>
         <h2>
-          BackroomScript is your premier destination for conversation confidence and authentic connection.
+          BackroomScript is a school that trains you, certifies you and connects you to jobs.
         </h2>
         <p>
-          We specialize in providing women with expertly crafted conversation templates and communication strategies that combine authenticity with confidence. Our carefully curated collection features proven templates designed to enhance your conversations in dating, business, and social settings. From first-date conversation starters to professional networking scripts, we offer everything you need to speak with power and grace. Our user-friendly online platform ensures a seamless experience across all devices, making it easy to access and master the conversation templates you need.
+          We provide structured lessons and practical material that prepare you for certification. Once you learn and pass the certification, you can access jobs through your profile with our wider range of companies that hire through us. Our online platform works across all devices, so you can study wherever you are.
         </p>
       </div>
       <div className={styles.section}>
         <h2>Why Choose BackroomScript?</h2>
         <p>
-          At BackroomScript, we are committed to empowering women with the communication skills they deserve. Our templates are created by women who understand the unique challenges of modern communication and have helped thousands build unshakeable confidence. We offer authentic, tested templates, lifetime access to all resources, and excellent customer support to make your journey to confident communication as smooth as possible. Whether you're navigating the dating world or building a business empire, our extensive range of conversation templates caters to all areas of your life.
+          We are committed to giving our students a clear path from learning to employment. Our material is tested, our instructors support you throughout, and our WhatsApp community keeps you connected with other students. Certified students get access to job opportunities from the companies that hire through us.
         </p>
       </div>
       <div className={styles.section}>
-        <h2>The Importance of Confident Communication</h2>
+        <h2>Why Learn With Us</h2>
         <p>
-          Mastering the art of conversation is essential for anyone who values authentic connections and meaningful relationships. Strong communication skills not only make interactions more enjoyable but also open doors to opportunities and create lasting impressions. At BackroomScript, we understand that the right words at the right time can transform your life, whether you're sending that first message on a dating app or closing an important business deal. Our templates are designed to help you express yourself authentically while maintaining your confidence and boundaries.
+          Learning is only useful when it leads somewhere. That is why every course at BackroomScript ends in a certification, and every certification opens the door to jobs from our hiring partners. You are not studying alone, you are building towards a real opportunity.
         </p>
       </div>
        
       <div className={styles.section}>
         <h2>
-          Why Conversation Templates Matter for Your Success
+          What You Get As A Student
         </h2>
         <p>
-          Quality conversation templates are the foundation of confident communication and meaningful connections. They offer structure, confidence, and authenticity that make every interaction more impactful and satisfying. Here's why investing in conversation mastery is worthwhile:
+          Every plan is designed to take you from beginner to certified and job ready. Here is what you can expect:
         </p>
 
         <ul className={styles.bulletList}>
           <li>
-            Build Authentic Confidence: Our templates help you express yourself genuinely while maintaining boundaries and self-respect in every conversation.
+            Structured Learning: Clear lessons that take you step by step towards certification.
           </li>
           <li>
-            Enhanced Communication Skills: Premium templates provide better conversation flow, natural responses, and engaging dialogue that creates real connections.
+            Certification: Pass the certification to show hiring companies you are ready.
           </li>
           <li>
-            Time-Saving Solutions: Well-crafted templates streamline your communication, helping you respond quickly and effectively without overthinking every message.
+            Job Access: Certified students access jobs through their profile from companies that hire through us.
           </li>
           <li>
-            Proven Success Patterns: Our templates include strategies that have worked for thousands of women in dating, business, and social situations.
+            Community: Join our WhatsApp community to learn alongside other students.
           </li>
           <li>
-            Versatile Application: Use our templates across multiple platforms and situations - from dating apps to business emails to social media engagement.
+            Instructor Support: Get answers to your questions and guidance on your certification.
           </li>
         </ul>
         <p>
-          Transform your communication style with our premium collection of templates and strategies. Every template in our library is chosen for its effectiveness, authenticity, and ability to create genuine connections.
+          Every lesson in our library is chosen to help you pass the certification and get hired.
         </p>
       </div>
       <div className={styles.section}>
         <h2>Getting Started with BackroomScript</h2>
         <p>
-          When choosing your tier at BackroomScript, consider your communication goals, learning style, and budget. We recommend starting with our essential Starter Glow package if you're new to conversation templates, then upgrading to Radiant Pro or Queen Elite as your confidence grows. Our detailed tier descriptions include template examples and success stories to help you make informed decisions. Remember that investing in communication skills upfront creates lifelong benefits through better relationships and opportunities.
+          When choosing your plan at BackroomScript, consider your career goals, learning style, and budget. We recommend starting with our free Starter Glow plan if you are new, then upgrading to Radiant Pro or Queen Elite as you move towards certification. Our plan descriptions and success stories will help you make an informed decision.
         </p>
       </div>
       <div className={styles.section}>
-        <h2>Our Template Categories</h2>
+        <h2>Our Course Categories</h2>
         <p>
-          Explore our comprehensive range of conversation templates across these categories:
+          Explore our range of courses across these categories:
         </p>
         <ul className={styles.bulletList}>
-          <li>Dating & Flirting Templates</li>
-          <li>Business Communication Scripts</li>
-          <li>Social Confidence Builders</li>
-          <li>Content Creation Guides</li>
-          <li>Professional Networking Tools</li>
+          <li>Communication Skills</li>
+          <li>Business Communication</li>
+          <li>Social Skills</li>
+          <li>Content Creation</li>
+          <li>Professional Networking</li>
         </ul>
       </div>
       <div className={styles.section}>
         <p>
-          BackroomScript is your trusted partner in building communication confidence. We provide quality templates, competitive pricing, and exceptional support to help you master conversations that matter. With instant access and lifetime updates, we make it easy to speak with confidence and authenticity.
+          BackroomScript is your trusted partner from learning to employment. Learn, pass the certification, and access jobs through your profile with the companies that hire through us.
         </p>
       </div>
     </div>

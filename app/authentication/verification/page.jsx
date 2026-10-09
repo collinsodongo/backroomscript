@@ -167,7 +167,7 @@ export default function Verification() {
             Wrong email?{" "}
             <span
               onClick={() => router.push("/authentication/signup")}
-              style={{ cursor: "pointer", color: "#ec4899" }}
+              className={styles.formLink}
             >
               Register again
             </span>

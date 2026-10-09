@@ -54,7 +54,7 @@ export default function SuccessStories() {
         <div className={styles.headerContent}>
           <h1 className={styles.title}>Success Stories</h1>
           <p className={styles.subtitle}>
-            Real transformations from real queens in our community
+            Real stories from students in our community
           </p>
         </div>
       </div>
@@ -90,14 +90,14 @@ export default function SuccessStories() {
             <HeartIcon />
           </div>
           <h3>No Success Stories Yet</h3>
-          <p>Be the first to share your transformation journey with our community!</p>
+          <p>Be the first to share how learning and certification changed your career!</p>
         </div>
       )}
 
       <div className={styles.cta}>
         <div className={styles.ctaContent}>
           <h2>Ready to Write Your Own Success Story?</h2>
-          <p>Join thousands of women transforming their conversations and confidence</p>
+          <p>Join thousands of students learning, getting certified and getting hired</p>
           <a href="/tiers" className={styles.ctaButton}>
             <SparklesIcon />
             <span>Get Started Today</span>

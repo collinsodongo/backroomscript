@@ -7,6 +7,7 @@ import {
   IoTime,
   IoBookmark,
   IoChatbubbles,
+  IoPeople,
   IoStar,
   IoCard,
   IoRocket,
@@ -16,6 +17,7 @@ import {
 } from "react-icons/io5";
 import { toast } from "sonner";
 import { useState } from "react";
+import { useCommunityStore } from "@/app/store/CommunityStore";
 
 const navigationItems = [
   {
@@ -37,6 +39,13 @@ const navigationItems = [
     label: "Bookmarked",
     requiresPro: true,
     lockMessage: "Upgrade to Pro to bookmark templates",
+  },
+  {
+    id: "community",
+    icon: IoPeople,
+    label: "Community",
+    external: true,
+    locked: false,
   },
   {
     id: "coaching",
@@ -103,8 +112,14 @@ export default function Sidebar({ username, currentTier, currentTierInfo, active
     });
   };
 
-  const handleNavClick = (itemId) => {
-    onTabChange(itemId);
+  const openCommunity = useCommunityStore((state) => state.openCommunity);
+
+  const handleNavClick = (item) => {
+    if (item.external) {
+      openCommunity();
+    } else {
+      onTabChange(item.id);
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -149,7 +164,7 @@ export default function Sidebar({ username, currentTier, currentTierInfo, active
               active={safeActiveTab === item.id}
               locked={item.locked}
               lockMessage={item.lockMessage}
-              onClick={() => handleNavClick(item.id)}
+              onClick={() => handleNavClick(item)}
             />
           ))}
         </nav>

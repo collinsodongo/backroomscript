@@ -347,3 +347,7 @@
     max-width: 520px;
   }
 }
+.formLink {
+  cursor: pointer;
+  color: #ec4899;
+}

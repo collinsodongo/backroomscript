@@ -32,47 +32,47 @@ export default function MiddleSection() {
   const features = [
     {
       icon: <HeartIcon />,
-      title: "Authentic Connection",
+      title: "Real Skills",
       description:
-        "Build genuine relationships without losing yourself or your boundaries.",
+        "Learn practical skills taught by instructors who work in the field.",
     },
     {
       icon: <ShieldIcon />,
-      title: "Safe & Secure",
+      title: "Recognised Certification",
       description:
-        "Your privacy matters. Watermarked content for your protection only.",
+        "Pass the certification and prove your skills to hiring companies.",
     },
     {
       icon: <SparklesIcon />,
-      title: "Confidence Boost",
+      title: "Job Access",
       description:
-        "Feel empowered in every conversation, whether dating or business.",
+        "Certified students get jobs through their profile from our hiring partners.",
     },
     {
       icon: <CrownIcon />,
-      title: "Queen Energy",
-      description: "Crafted by women, for women who know their worth.",
+      title: "Community",
+      description: "Learn alongside other students in our WhatsApp community.",
     },
   ];
 
   const steps = [
     {
       icon: <HeartIcon />,
-      title: "Choose Your Path",
+      title: "Enrol",
       description:
-        "Select the tier that matches your goals. Whether dating, business, or content creation - find your perfect fit.",
+        "Select the plan that matches your goals and join the school.",
     },
     {
       icon: <SparklesIcon />,
-      title: "Learn & Grow",
+      title: "Learn & Get Certified",
       description:
-        "Access proven templates crafted by women who understand your journey. Follow our confidence-building guide.",
+        "Work through the course material, join the community and pass your certification.",
     },
     {
       icon: <FlowerIcon />,
-      title: "Bloom & Thrive",
+      title: "Get Hired",
       description:
-        "Watch your confidence soar as you master authentic conversations. Track your beautiful transformation.",
+        "Access jobs through your profile from the wider range of companies that hire through us.",
     },
   ];
 
@@ -125,9 +125,9 @@ export default function MiddleSection() {
       <div className={styles.middleContainer}>
         <div className={styles.howItWorksSection}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Your Glow-Up Journey</h2>
+            <h2 className={styles.sectionTitle}>Your Path To A Job</h2>
             <p className={styles.sectionSubtitle}>
-              Three simple steps to conversation confidence
+              Three simple steps from learning to employment
             </p>
           </div>
 

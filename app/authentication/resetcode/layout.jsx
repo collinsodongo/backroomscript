@@ -2,7 +2,7 @@ const SITE_URL = "http://backroomscript.com";
 
 export const metadata = {
   title: "Reset Password - Recover Your Account",
-  description: "Reset your BackroomScript password to regain access to your conversation templates and account.",
+  description: "Reset your BackroomScript password to regain access to your courses and account.",
 
   robots: {
     index: false,

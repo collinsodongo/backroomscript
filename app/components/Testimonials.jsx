@@ -47,7 +47,7 @@ const FAQ_DATA = [
     id: 1,
     question: "How do I get started with BackroomScript?",
     answer:
-      "Getting started is easy! Simply choose your tier, complete the secure payment via Paystack (M-Pesa supported), and you'll instantly receive access to your templates and resources. Our quick-start guide will walk you through everything.",
+      "Getting started is easy! Simply choose your tier, complete the secure payment via Paystack (M-Pesa supported), and you'll instantly receive access to your courses and resources. Our quick-start guide will walk you through everything.",
   },
   {
     id: 2,
@@ -160,7 +160,7 @@ export default function TestimonialsAndFAQ() {
             <div className={styles.decorativeLine}></div>
             <h2 className={styles.sectionTitle}>
               See why We're rated #1 in{" "}
-              <span className={styles.highlight}>Conversation Confidence</span>
+              <span className={styles.highlight}>Learning and Jobs</span>
             </h2>
           </div>
           <div className={styles.testimonialsController}>
@@ -188,9 +188,9 @@ export default function TestimonialsAndFAQ() {
         </div>
 
         <p className={styles.subtitle}>
-          Our conversation templates empower women to communicate with
-          confidence and authenticity. Join thousands of queens mastering the
-          art of connection.
+          Our school helps students learn, pass the certification and access
+          jobs through the companies that hire through us. Join thousands of
+          students building their careers.
         </p>
 
         {storiesLoading ? (

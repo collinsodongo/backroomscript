@@ -2,14 +2,14 @@ export default function manifest() {
   return {
     name: 'BackroomScript',
     short_name: 'BackroomScript',
-    description: 'Premium conversation templates and communication strategies for women. Master confident conversations in dating, business, and social settings.',
+    description: 'A school that trains and certifies you, then connects you to jobs with the companies that hire through us.',
     start_url: '/',
     scope: '/',
     display: 'standalone',
     orientation: 'portrait',
     background_color: '#fef3f8',
     theme_color: '#fef3f8',
-    categories: ['lifestyle', 'education', 'communication', 'dating', 'business', 'personal development'],
+    categories: ['education', 'business', 'jobs', 'personal development'],
     
     icons: [
       {

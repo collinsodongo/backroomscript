@@ -145,7 +145,7 @@ function SignUpForm() {
       >
         <div className={styles.formHeader}>
           <h1>Welcome to BackroomScript</h1>
-          <p>Create your account and start your glow-up journey</p>
+          <p>Create your account and start learning and get on the path to a job</p>
         </div>
 
         {/* Username */}

@@ -63,8 +63,8 @@ const useNavLinks = () => {
             { name: "Radiant Pro", href: "/tiers" },
             { name: "Queen Elite", href: "/tiers" },
           ],
-          title: "Choose Your Glow Level",
-          description: "One-time investment in yourself. Lifetime confidence.",
+          title: "Choose Your Learning Plan",
+          description: "Invest in your career. Learn, get certified, get hired.",
         },
         { href: "/success-stories", label: "Success Stories" },
       ].filter(Boolean),
@@ -392,7 +392,7 @@ const RightSection = ({
 const CTASection = () => (
   <Link href="/tiers" className={styles.ctaButton}>
     <SparklesIcon className={styles.sparkleIcon} />
-    <span>Start Your Glow</span>
+    <span>Start Learning</span>
   </Link>
 );
 

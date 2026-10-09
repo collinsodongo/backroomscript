@@ -17,11 +17,11 @@ export default function ContactUs() {
   });
 
   const subjectOptions = [
-    { value: "template-inquiry", label: "Template Inquiry" },
-    { value: "tier-questions", label: "Tier Questions" },
+    { value: "template-inquiry", label: "Course Inquiry" },
+    { value: "tier-questions", label: "Plan Questions" },
     { value: "access-issues", label: "Access Issues" },
     { value: "technical-support", label: "Technical Support" },
-    { value: "coaching-booking", label: "Coaching Session Booking" },
+    { value: "coaching-booking", label: "Mentorship Session Booking" },
     { value: "feedback", label: "Feedback" },
     { value: "other", label: "Other" },
   ];
@@ -119,9 +119,9 @@ export default function ContactUs() {
       <div className={styles.section}>
         <h2>Get in Touch with BackroomScript</h2>
         <p>
-          We're here to help you master confident communication and find the
-          perfect conversation templates for your journey. Whether you have
-          questions about our tiers, need assistance with template access, or
+          We're here to help you learn, get certified and access jobs. Whether
+          you have questions about our plans, need assistance with course
+          access, or
           want to provide feedback, our support team is ready to assist you.
           Reach out to us through any of the methods below.
         </p>
@@ -232,17 +232,17 @@ export default function ContactUs() {
         </p>
         <ul className={styles.bulletList}>
           <li>
-            <strong>Template Access:</strong> Templates are instantly
+            <strong>Course Access:</strong> Course material is instantly
             accessible after purchase through your dashboard
           </li>
           <li>
-            <strong>Tier Upgrades:</strong> You can upgrade to a higher tier at
+            <strong>Plan Upgrades:</strong> You can upgrade to a higher plan at
             any time
           </li>
        
           <li>
-            <strong>Coaching Sessions:</strong> Queen Elite members can schedule
-            their 1-on-1 coaching session via email or WhatsApp
+            <strong>Mentorship Sessions:</strong> Queen Elite students can schedule
+            their 1-on-1 mentorship session via email or WhatsApp
           </li>
           <li>
             <strong>Payment:</strong> We accept M-Pesa, bank transfers, Visa,
@@ -255,7 +255,7 @@ export default function ContactUs() {
         <p>
           <strong>Response Time:</strong> We aim to respond to all inquiries
           within 24 hours during business days. For urgent matters, Queen Elite
-          members can reach us directly via WhatsApp.
+          students can reach us directly via WhatsApp.
         </p>
       </div>
     </div>

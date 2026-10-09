@@ -34,42 +34,30 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "BackroomScript - Conversation Templates & Confidence for Women",
+    default: "BackroomScript - Learn, Get Certified & Get Hired",
     template: "%s | BackroomScript",
   },
   applicationName: "BackroomScript",
   description:
-    "Master confident conversations with BackroomScript. Premium conversation templates for dating, business, and social confidence. Built by women, for women. 2,251+ queens rising.",
+    "Learn with BackroomScript, pass the certification and access jobs through your profile with our wider range of hiring companies. Join 2,251+ students.",
   authors: [{ name: "BackroomScript", url: SITE_URL }],
   generator: "Next.js",
   keywords: [
     "BackroomScript",
-    "conversation templates",
-    "dating templates",
-    "flirting templates",
+    "online school",
     "business communication",
-    "confident communication",
-    "conversation confidence",
-    "women empowerment",
-    "dating confidence",
+    "certification",
     "social confidence",
-    "conversation starters",
+    "job placement",
     "communication skills",
-    "text templates",
-    "messaging templates",
     "professional communication",
-    "networking templates",
     "content creation",
-    "authentic conversations",
+    "learn and get hired",
     "relationship building",
-    "confident texting",
-    "dating scripts",
     "business scripts",
     "social scripts",
     "communication mastery",
-    "conversation tools",
-    "women's communication",
-    "confident messaging",
+    "career training",
     "authentic connection",
   ],
 
@@ -88,24 +76,24 @@ export const metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "BackroomScript",
-    title: "BackroomScript - Conversation Templates & Confidence for Women",
+    title: "BackroomScript - Learn, Get Certified & Get Hired",
     description:
-      "Master confident conversations with premium templates for dating, business, and social confidence. Join 2,251+ women finding their voice.",
+      "Learn, pass the certification and access jobs through your profile with the companies that hire through us. Join 2,251+ students.",
     images: [
       {
         url: BANNER_URL,
         width: 1200,
         height: 630,
-        alt: "BackroomScript - Conversation Templates & Confidence for Women",
+        alt: "BackroomScript - Learn, Get Certified & Get Hired",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "BackroomScript - Conversation Templates & Confidence for Women",
+    title: "BackroomScript - Learn, Get Certified & Get Hired",
     description:
-      "Master confident conversations with premium templates for dating, business, and social confidence. Built by women, for women.",
+      "Learn, pass the certification and access jobs through your profile with the companies that hire through us.",
     images: [BANNER_URL],
     creator: "@backroomscript",
   },
@@ -147,7 +135,7 @@ const organizationSchema = {
   url: SITE_URL,
   logo: `${SITE_URL}/assets/logo.png`,
   description:
-    "BackroomScript - Premium conversation templates and communication strategies for women seeking confidence in dating, business, and social interactions",
+    "BackroomScript - A school that trains and certifies you, then connects you to jobs with the companies that hire through us",
   sameAs: [
     "https://www.facebook.com/backroomscript",
     "https://instagram.com/backroomscript",
@@ -169,7 +157,7 @@ const organizationSchema = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Conversation Templates & Tiers",
+    name: "Courses & Plans",
     itemListElement: [
       {
         "@type": "OfferCatalog",
@@ -179,7 +167,7 @@ const organizationSchema = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Product",
-              name: "1 Conversation Starters & Basic Templates",
+              name: "1 Lesson Per Day & Email Support",
             },
           },
         ],
@@ -192,7 +180,7 @@ const organizationSchema = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Product",
-              name: "20 Templates, Advanced flirting techniques, Community Access among others",
+              name: "Full course access, certification preparation, WhatsApp community access among others",
             },
           },
         ],
@@ -205,7 +193,7 @@ const organizationSchema = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Product",
-              name: "Unlimited Expert templates, 1-on-1 coaching session (60min), among others",
+              name: "Complete course access, 1-on-1 mentorship session (60min), priority job access among others",
             },
           },
         ],
@@ -239,7 +227,7 @@ export default function RootLayout({ children }) {
             src="https://www.googletagmanager.com/ns.html?id=GTM-"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            hidden
           />
         </noscript>
 

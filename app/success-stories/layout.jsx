@@ -25,25 +25,25 @@ export async function generateMetadata() {
   const storyCount = stories.length || 2251;
 
   return {
-    title: "Success Stories - Real Transformations from Real Queens",
-    description: `Read inspiring success stories from ${storyCount}+ women who transformed their dating life, business communication, and social confidence using BackroomScript conversation templates.`,
+    title: "Success Stories - Real Graduates, Real Jobs",
+    description: `Read inspiring success stories from ${storyCount}+ students who learned, got certified and found jobs through BackroomScript.`,
 
     keywords: [
       "BackroomScript success stories",
-      "conversation template testimonials",
-      "dating success stories",
-      "communication transformation",
-      "women empowerment stories",
-      "conversation confidence reviews",
-      "dating life transformation",
-      "business communication success",
-      "social confidence testimonials",
+      "student testimonials",
+      "certification success stories",
+      "career transformation",
+      "job placement stories",
+      "course reviews",
+      "graduate stories",
+      "hired graduates",
+      "student community stories",
       "real customer reviews"
     ],
 
     openGraph: {
       title: "Success Stories - Real Transformations | BackroomScript",
-      description: `Read how ${storyCount}+ queens transformed their conversations and found confidence in dating, business & social settings.`,
+      description: `Read how ${storyCount}+ students learned, got certified and found jobs.`,
       url: `${SITE_URL}/success-stories`,
       type: "website",
       images: [
@@ -51,7 +51,7 @@ export async function generateMetadata() {
           url: SUCCESS_IMAGE_URL,
           width: 1200,
           height: 630,
-          alt: "BackroomScript Success Stories - Women's Communication Transformations"
+          alt: "BackroomScript Success Stories - Graduate Job Stories"
         }
       ],
     },
@@ -59,7 +59,7 @@ export async function generateMetadata() {
     twitter: {
       card: "summary_large_image",
       title: "Success Stories - Real Transformations | BackroomScript",
-      description: `Read how ${storyCount}+ queens transformed their conversations and found confidence.`,
+      description: `Read how ${storyCount}+ students learned, got certified and found jobs.`,
       images: [SUCCESS_IMAGE_URL],
     },
 
@@ -109,7 +109,7 @@ export default async function SuccessStoriesLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "BackroomScript Success Stories",
-    "description": "Real transformations from women who mastered confident conversations",
+    "description": "Real stories from students who learned, got certified and found jobs",
     "url": `${SITE_URL}/success-stories`,
     "mainEntity": {
       "@type": "ItemList",

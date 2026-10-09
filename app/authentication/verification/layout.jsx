@@ -2,7 +2,7 @@ const SITE_URL = "http://backroomscript.com";
 
 export const metadata = {
   title: "Email Verification - Verify Your Account",
-  description: "Verify your BackroomScript account to unlock access to conversation templates and start your journey to confident communication.",
+  description: "Verify your BackroomScript account to unlock access to your courses and start your path to certification and jobs.",
 
   robots: {
     index: false,

@@ -5,25 +5,25 @@ const BANNER_URL =
 export const metadata = {
   title: "Contact Us - Get Support & Connect with BackroomScript",
   description:
-    "Contact BackroomScript for support, coaching inquiries, tier questions, or feedback. Available Monday-Friday 8AM-6PM EAT. Phone: +254-796-620-365 | Email: support@backroomscript.com",
+    "Contact BackroomScript for support, course questions, certification inquiries, or feedback. Available Monday-Friday 8AM-6PM EAT. Phone: +254-796-620-365 | Email: support@backroomscript.com",
 
   keywords: [
     "BackroomScript contact",
     "customer support",
-    "coaching inquiries",
-    "template support",
+    "certification inquiries",
+    "course support",
     "tier questions",
     "BackroomScript email",
     "BackroomScript phone",
     "Nairobi customer service",
-    "conversation coaching support",
-    "VIP support",
+    "student support",
+    "job access support",
   ],
 
   openGraph: {
     title: "Contact Us - Get Support & Connect | BackroomScript",
     description:
-      "Need help? Our team is ready to assist with templates, tiers, and coaching. Reach out today!",
+      "Need help? Our team is ready to assist with courses, plans, and certification. Reach out today!",
     url: `${SITE_URL}/contact`,
     type: "website",
     images: [
@@ -40,7 +40,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Contact Us - Get Support & Connect | BackroomScript",
     description:
-      "Need help? Our team is ready to assist with templates, tiers, and coaching.",
+      "Need help? Our team is ready to assist with courses, plans, and certification.",
     images: [BANNER_URL],
   },
 
@@ -75,7 +75,7 @@ const contactPageSchema = {
   "@type": "ContactPage",
   name: "Contact BackroomScript",
   description:
-    "Get in touch with BackroomScript for support, coaching, or questions about conversation templates",
+    "Get in touch with BackroomScript for support, certification, or questions about our courses and jobs",
   url: `${SITE_URL}/contact`,
   mainEntity: {
     "@type": "Organization",

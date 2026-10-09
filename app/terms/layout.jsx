@@ -2,7 +2,7 @@ const SITE_URL = "https://backroomscript.com";
 
 export const metadata = {
   title: "Terms of Use - Service Terms & Conditions",
-  description: "Read BackroomScript's terms of use. Understand your rights and responsibilities when using our conversation templates, tiers, and coaching services.",
+  description: "Read BackroomScript's terms of use. Understand your rights and responsibilities when using our courses, plans, and mentorship services.",
 
   keywords: [
     "BackroomScript terms",
