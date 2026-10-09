@@ -1,44 +1,12 @@
-const SITE_URL = "https://backroomscript.com";
+import { buildMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Terms of Use - Service Terms & Conditions",
-  description: "Read BackroomScript's terms of use. Understand your rights and responsibilities when using our courses, plans, and mentorship services.",
-
-  keywords: [
-    "BackroomScript terms",
-    "terms of use",
-    "service terms",
-    "terms and conditions",
-    "user agreement",
-    "legal terms",
-    "subscription terms",
-    "refund policy",
-    "intellectual property"
-  ],
-
-  openGraph: {
-    title: "Terms of Use | BackroomScript",
-    description: "Review BackroomScript's terms of use and service conditions.",
-    url: `${SITE_URL}/terms`,
-    type: "website",
-  },
-
-  twitter: {
-    card: "summary",
-    title: "Terms of Use | BackroomScript",
-    description: "Review BackroomScript's terms of use and service conditions.",
-  },
-
-  alternates: {
-    canonical: `${SITE_URL}/terms`,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata = buildMetadata({
+  title: "Terms of Use",
+  description:
+    "Read the BackroomScript terms of use: your rights and responsibilities when using our courses, plans, certification and mentorship services.",
+  path: "/terms",
+});
 
 export default function TermsLayout({ children }) {
-  return <>{children}</>;
+  return children;
 }

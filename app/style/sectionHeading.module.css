@@ -26,6 +26,7 @@
     gap: var(--spacing-md);
   }
 
+  .sectionHeading h1,
   .sectionHeading h2 {
     margin: 0;
     line-height: 1.25;
@@ -35,6 +36,7 @@
     font-family: var(--font-family-heading);
   }
 
+  .sectionHeading h1 span,
   .sectionHeading h2 span {
     color: var(--primary-color);
   }
@@ -62,12 +64,14 @@
 }
 
 @media only screen and (min-width: 48em) {
+  .sectionHeading h1,
   .sectionHeading h2 {
     font-size: var(--font-size-4xl);
   }
 }
 
 @media only screen and (min-width: 91em) {
+  .sectionHeading h1,
   .sectionHeading h2 {
     font-size: 2.75rem;
   }

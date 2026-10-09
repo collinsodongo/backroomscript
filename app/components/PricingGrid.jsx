@@ -20,6 +20,7 @@ export default function PricingGrid({
   showHeader = true,
   showFooter = true,
   getTierLevel,
+  headingLevel = "h2",
 }) {
   const fetchPricing = useSubscriptionStore((state) => state.fetchPricing);
 
@@ -39,6 +40,7 @@ export default function PricingGrid({
       {showHeader && (
         <div className={styles.header}>
           <SectionHeading
+            level={headingLevel}
             before="Choose your"
             accent="learning plan"
             subtitle="Invest in your career. Learn, get certified, get hired."

@@ -80,6 +80,7 @@ export default function TiersPage() {
         onSelectTier={handleSelectTier}
         loading={processingTier}
         variant="detailed"
+        headingLevel="h1"
         showHeader={true}
         showFooter={true}
         getTierLevel={getTierLevel}

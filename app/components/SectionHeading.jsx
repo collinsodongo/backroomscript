@@ -6,14 +6,17 @@ export default function SectionHeading({
   after,
   subtitle,
   align = "center",
+  level = "h2",
 }) {
+  const Heading = level;
+
   return (
     <div className={`${styles.sectionHeading} ${styles[align]}`}>
       <div className={styles.titleRow}>
-        <h2>
+        <Heading>
           {before} <span>{accent}</span>
           {after && ` ${after}`}
-        </h2>
+        </Heading>
         <i className={styles.underline} />
       </div>
       {subtitle && <p>{subtitle}</p>}

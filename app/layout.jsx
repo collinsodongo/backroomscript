@@ -3,10 +3,13 @@ import "@/app/style/global.css";
 import Script from "next/script";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import JsonLd from "@/app/components/JsonLd";
 import GlobalLoader from "@/app/components/GlobalLoader";
 import styles from "@/app/style/applayout.module.css";
 import { Inter, Playfair_Display } from "next/font/google";
 import { StoreInitializer } from "@/app/components/StoreInitializer";
+import { SITE, absoluteUrl } from "@/app/constants/site";
+import { buildMetadata } from "@/app/lib/seo";
 
 const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
@@ -22,254 +25,111 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-const SITE_URL = "https://backroomscript.com";
-const BANNER_URL =
-  "https://raw.githubusercontent.com/DarknessMonarch/backroomscript/refs/heads/master/public/assets/banner.png";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GOOGLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const viewport = {
-  themeColor: "#fff5f0",
+  themeColor: "#fffaf7",
 };
 
+const defaults = buildMetadata({ description: SITE.description });
+
 export const metadata = {
-  metadataBase: new URL(SITE_URL),
-
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "BackroomScript - Learn, Get Certified & Get Hired",
-    template: "%s | BackroomScript",
+    default: `${SITE.name} - ${SITE.tagline}`,
+    template: `%s | ${SITE.name}`,
   },
-  applicationName: "BackroomScript",
-  description:
-    "Learn with BackroomScript, pass the certification and access jobs through your profile with our wider range of hiring companies. Join 2,251+ students.",
-  authors: [{ name: "BackroomScript", url: SITE_URL }],
-  generator: "Next.js",
+  description: SITE.description,
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
+  publisher: SITE.name,
   keywords: [
-    "BackroomScript",
     "online school",
-    "business communication",
+    "online courses with certificate",
     "certification",
-    "social confidence",
     "job placement",
-    "communication skills",
-    "professional communication",
-    "content creation",
     "learn and get hired",
-    "relationship building",
-    "business scripts",
-    "social scripts",
-    "communication mastery",
+    "communication skills course",
+    "business communication course",
     "career training",
-    "authentic connection",
   ],
-
-  referrer: "origin-when-cross-origin",
-  creator: "BackroomScript",
-  publisher: "BackroomScript",
-
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: SITE_URL,
-    siteName: "BackroomScript",
-    title: "BackroomScript - Learn, Get Certified & Get Hired",
-    description:
-      "Learn, pass the certification and access jobs through your profile with the companies that hire through us. Join 2,251+ students.",
-    images: [
-      {
-        url: BANNER_URL,
-        width: 1200,
-        height: 630,
-        alt: "BackroomScript - Learn, Get Certified & Get Hired",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "BackroomScript - Learn, Get Certified & Get Hired",
-    description:
-      "Learn, pass the certification and access jobs through your profile with the companies that hire through us.",
-    images: [BANNER_URL],
-    creator: "@backroomscript",
-  },
-
+  openGraph: defaults.openGraph,
+  twitter: defaults.twitter,
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: false,
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
-
-  verification: {
-    google: "",
-    yandex: "",
-  },
-
-  alternates: {
-    canonical: `${SITE_URL}`,
-  },
-
+  ...(GOOGLE_VERIFICATION && { verification: { google: GOOGLE_VERIFICATION } }),
   icons: {
     icon: "/favicon.ico",
     apple: "/icons/apple-touch-icon.png",
-    shortcut: "/favicon.ico",
   },
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "BackroomScript",
-  url: SITE_URL,
-  logo: `${SITE_URL}/assets/logo.png`,
-  description:
-    "BackroomScript - A school that trains and certifies you, then connects you to jobs with the companies that hire through us",
-  sameAs: [
-    "https://www.facebook.com/backroomscript",
-    "https://instagram.com/backroomscript",
-    "https://www.tiktok.com/@backroomscript",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    email: "backroomscript@gmail.com",
-    contactType: "Customer Support",
-    url: SITE_URL,
-    telephone: "+447401012610",
-    areaServed: "Worldwide",
-    availableLanguage: "English",
+const siteSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "@id": absoluteUrl("/#organization"),
+    name: SITE.name,
+    url: SITE.url,
+    logo: absoluteUrl(SITE.logo),
+    description: SITE.description,
+    email: SITE.email,
+    telephone: SITE.telephone,
+    address: { "@type": "PostalAddress", addressCountry: SITE.country },
+    sameAs: SITE.social,
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "2251",
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": absoluteUrl("/#website"),
+    name: SITE.name,
+    url: SITE.url,
+    publisher: { "@id": absoluteUrl("/#organization") },
   },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Courses & Plans",
-    itemListElement: [
-      {
-        "@type": "OfferCatalog",
-        name: "Foundation",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
-              name: "1 Lesson Per Day & Email Support",
-            },
-          },
-        ],
-      },
-      {
-        "@type": "OfferCatalog",
-        name: "Certificate",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
-              name: "Full course access, certification preparation, WhatsApp community access among others",
-            },
-          },
-        ],
-      },
-      {
-        "@type": "OfferCatalog",
-        name: "Career",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Product",
-              name: "Complete course access, 1-on-1 mentorship session (60min), priority job access among others",
-            },
-          },
-        ],
-      },
-    ],
-  },
-};
+];
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
+      <body
+        className={`${inter.variable} ${playfair.variable} ${inter.className}`}
+      >
+        <JsonLd data={siteSchema} />
 
         <Script
           id="paystack-js"
           strategy="lazyOnload"
           src="https://js.paystack.co/v1/inline.js"
         />
-      </head>
-      <body
-        className={`${inter.variable} ${playfair.variable} ${inter.className}`}
-      >
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-"
-            height="0"
-            width="0"
-            hidden
-          />
-        </noscript>
 
-        <Script
-          id="ga-tag"
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-', {
-                page_path: window.location.pathname,
-                custom_map: {
-                  'custom_parameter_1': 'conversation_category'
-                }
-              });
-              
-              gtag('config', 'G-', {
-                'custom_map.category': 'templates'
-              });
-            `,
-          }}
-        />
+        {GA_ID && (
+          <>
+            <Script
+              id="ga-tag"
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+            </Script>
+          </>
+        )}
 
-        <Toaster
-          position="top-center"
-          richColors={true}
-          toastOptions={{
-            style: {
-              background: "#f26a3d",
-              color: "#ffffff",
-              borderRadius: "15px",
-              border: "1px solid #f26a3d",
-            },
-          }}
-        />
+        <Toaster position="top-center" richColors={true} />
         <GlobalLoader />
         <div className={styles.appLayout}>
           <Navbar />

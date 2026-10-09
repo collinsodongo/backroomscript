@@ -5,6 +5,7 @@ import { useSuccessStoryStore } from "@/app/store/SuccessStoryStore";
 import PageSection from "@/app/components/PageSection";
 import SectionHeading from "@/app/components/SectionHeading";
 import { TIER_NAMES } from "@/app/constants/courses";
+import { FAQ_DATA } from "@/app/constants/faq";
 import styles from "@/app/style/testimonials.module.css";
 import {
   MdOutlineKeyboardArrowLeft as LeftIcon,
@@ -22,34 +23,6 @@ const initials = (name) =>
     .map((word) => word[0])
     .join("")
     .toUpperCase();
-
-const FAQ_DATA = [
-  {
-    question: "How do I get started with BackroomScript?",
-    answer:
-      "Create your free account, choose a plan, and start learning straight away. Pay securely through Paystack with M-Pesa or card when you upgrade.",
-  },
-  {
-    question: "How do I get access to jobs?",
-    answer:
-      "Once you learn and pass the certification, you can access jobs through your profile from the companies that hire through us.",
-  },
-  {
-    question: "Is there a free plan?",
-    answer:
-      "Yes. The Foundation plan is free and lets you start learning. Upgrade at any time for full course access and job access.",
-  },
-  {
-    question: "What payment methods do you accept?",
-    answer:
-      "We accept M-Pesa, Airtel Money, credit and debit cards, and bank transfers through Paystack. All transactions are encrypted.",
-  },
-  {
-    question: "Is support available?",
-    answer:
-      "Yes. Reach us from the contact page or the WhatsApp community, Monday to Friday, 8AM to 6PM EAT.",
-  },
-];
 
 export default function Testimonials() {
   const { approvedStories, storiesLoading, getApprovedStories } = useSuccessStoryStore();

@@ -36,7 +36,6 @@
   height: 45px;
   width: auto;
   object-fit: contain;
-  filter: hue-rotate(40deg) saturate(1.2);
 }
 
 .navigationLinks {

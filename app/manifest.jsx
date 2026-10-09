@@ -1,92 +1,27 @@
+import { SITE } from "@/app/constants/site";
+
 export default function manifest() {
   return {
-    name: 'BackroomScript',
-    short_name: 'BackroomScript',
-    description: 'A school that trains and certifies you, then connects you to jobs with the companies that hire through us.',
-    start_url: '/',
-    scope: '/',
-    display: 'standalone',
-    orientation: 'portrait',
-    background_color: '#fff5f0',
-    theme_color: '#fff5f0',
-    categories: ['education', 'business', 'jobs', 'personal development'],
-    
+    name: `${SITE.name} - ${SITE.tagline}`,
+    short_name: SITE.name,
+    description: SITE.description,
+    start_url: "/",
+    scope: "/",
+    display: "standalone",
+    background_color: "#fffaf7",
+    theme_color: "#f26a3d",
+    categories: ["education", "business"],
+    lang: "en",
+    dir: "ltr",
     icons: [
-      {
-        src: '/assets/logo.png',
-        sizes: '192x192',
-        type: 'image/png',
-        purpose: 'any maskable'
-      },
-      {
-        src: '/assets/logo.png',
-        sizes: '384x384',
-        type: 'image/png',
-        purpose: 'any'
-      },
-      {
-        src: '/assets/logo.png',
-        sizes: '512x512',
-        type: 'image/png',
-        purpose: 'any'
-      },
-      {
-        src: '/assets/logo.png',
-        sizes: '180x180',
-        type: 'image/png',
-        purpose: 'any'
-      },
-      {
-        src: '/favicon.ico',
-        sizes: '48x48',
-        type: 'image/x-icon'
-      }
+      { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icons/icon-384.png", sizes: "384x384", type: "image/png", purpose: "any" },
+      { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icons/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
-    
-    prefer_related_applications: false,
-    
-    lang: 'en',
-    dir: 'ltr',
-    
     shortcuts: [
-      {
-        name: 'Foundation',
-        short_name: 'Starter',
-        description: 'View Foundation tier',
-        url: '/tiers/starter',
-        icons: [{ src: '/assets/logo.png', sizes: '96x96' }]
-      },
-      {
-        name: 'Certificate',
-        short_name: 'Pro',
-        description: 'View Certificate tier',
-        url: '/tiers/pro',
-        icons: [{ src: '/assets/logo.png', sizes: '96x96' }]
-      },
-      {
-        name: 'Career',
-        short_name: 'Elite',
-        description: 'View Career tier',
-        url: '/tiers/elite',
-        icons: [{ src: '/assets/logo.png', sizes: '96x96' }]
-      },
-      {
-        name: 'Success Stories',
-        short_name: 'Stories',
-        description: 'Read success stories',
-        url: '/success-stories',
-        icons: [{ src: '/assets/logo.png', sizes: '96x96' }]
-      }
+      { name: "Plans", url: "/tiers", icons: [{ src: "/icons/icon-192.png", sizes: "192x192" }] },
+      { name: "Success Stories", url: "/success-stories", icons: [{ src: "/icons/icon-192.png", sizes: "192x192" }] },
     ],
-    
-    screenshots: [
-      {
-        src: '/assets/banner.png',
-        sizes: '1280x720',
-        type: 'image/png',
-        platform: 'wide',
-        label: 'Home Screen'
-      }
-    ]
-  }
+  };
 }

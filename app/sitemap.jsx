@@ -1,84 +1,21 @@
-export default async function sitemap() {
-  const baseUrl = "https://backroomscript.com";
+import { absoluteUrl } from "@/app/constants/site";
 
-  const mainRoutes = [
-    {
-      url: `${baseUrl}/`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-  ];
+const PUBLIC_PAGES = [
+  { path: "/", changeFrequency: "weekly", priority: 1 },
+  { path: "/tiers", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/success-stories", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/about", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/contact", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/authentication/signup", changeFrequency: "yearly", priority: 0.5 },
+  { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
+];
 
-  const tierRoutes = [
-    {
-      url: `${baseUrl}/tiers`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/tiers/starter`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tiers/pro`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tiers/elite`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-  ];
-
-  const contentRoutes = [
-    {
-      url: `${baseUrl}/success-stories`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
-
-  const legalRoutes = [
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-  ];
-
-  const allRoutes = [
-    ...mainRoutes,
-    ...tierRoutes,
-    ...contentRoutes,
-    ...legalRoutes,
-  ];
-
-  return allRoutes;
+export default function sitemap() {
+  return PUBLIC_PAGES.map(({ path, changeFrequency, priority }) => ({
+    url: absoluteUrl(path),
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+  }));
 }

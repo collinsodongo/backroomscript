@@ -1,19 +1,12 @@
-const SITE_URL = "http://backroomscript.com";
+import { buildMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Email Verification - Verify Your Account",
-  description: "Verify your BackroomScript account to unlock access to your courses and start your path to certification and jobs.",
-
-  robots: {
-    index: false,
-    follow: false,
-  },
-
-  alternates: {
-    canonical: `${SITE_URL}/authentication/verification`,
-  },
-};
+export const metadata = buildMetadata({
+  title: "Verify Your Email",
+  description: "Verify your BackroomScript account email address.",
+  path: "/authentication/verification",
+  index: false,
+});
 
 export default function VerificationLayout({ children }) {
-  return <>{children}</>;
+  return children;
 }

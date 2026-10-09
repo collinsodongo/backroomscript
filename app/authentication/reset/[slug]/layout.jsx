@@ -1,15 +1,11 @@
-const SITE_URL = "http://backroomscript.com";
+import { buildMetadata } from "@/app/lib/seo";
 
-export const metadata = {
-  title: "Set New Password - Reset Your Account Password",
-  description: "Set a new password for your BackroomScript account to restore access to your courses.",
+export const metadata = buildMetadata({
+  title: "Set New Password",
+  description: "Set a new password for your BackroomScript account.",
+  index: false,
+});
 
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
-
-export default function ResetSlugLayout({ children }) {
-  return <>{children}</>;
+export default function ResetPasswordLayout({ children }) {
+  return children;
 }
