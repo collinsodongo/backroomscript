@@ -43,10 +43,8 @@ export default function PricingCard({
     if (loading) return "Processing...";
     if (isCurrent) return "Current Plan";
     if (isLocked) return "Contact Support";
-    if (tier.id === "starter") return "Get Started";
-    if (tier.id === "pro") return "Upgrade to Pro";
-    if (tier.id === "elite") return "Upgrade to Elite";
-    return "Select Plan";
+    if (tier.id === "starter") return "Start Learning";
+    return `Choose ${tier.name}`;
   };
 
   return (
@@ -58,7 +56,7 @@ export default function PricingCard({
       {isPopular && (
         <div className={styles.popularBadge}>
           <CrownIcon />
-          <span>MOST LOVED</span>
+          <span>MOST POPULAR</span>
         </div>
       )}
 

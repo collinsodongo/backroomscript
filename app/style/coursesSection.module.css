@@ -1,0 +1,31 @@
+@media screen {
+  .courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-lg);
+  }
+
+  .courseItem {
+    display: flex;
+    flex: 1 1 100%;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  .courseItem {
+    flex: 0 1 calc(50% - var(--spacing-lg));
+  }
+}
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  .courseItem {
+    flex: 0 1 calc(33.333% - var(--spacing-lg));
+  }
+}
+
+@media only screen and (min-width: 91em) {
+  .courseItem {
+    flex: 0 1 calc(33.333% - var(--spacing-lg));
+  }
+}

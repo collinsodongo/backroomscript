@@ -3,12 +3,8 @@
   top: 0;
   z-index: 1000;
   width: 100%;
-  backdrop-filter: var(--blur-sm);
-  box-shadow: var(--glass-shadow-md);
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
-  border-bottom: var(--glass-border-light);
-  background: var(--light-background-color);
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
 }
 
 .navbarContainer {
@@ -40,6 +36,7 @@
   height: 45px;
   width: auto;
   object-fit: contain;
+  filter: hue-rotate(40deg) saturate(1.2);
 }
 
 .navigationLinks {
@@ -214,6 +211,16 @@
   gap: var(--spacing-sm);
 }
 
+.loginLink {
+  padding: 0 var(--spacing-sm);
+  color: var(--dark-color);
+  font-weight: var(--font-weight-medium);
+}
+
+.loginLink:hover {
+  color: var(--primary-color);
+}
+
 .accountSection {
   width: 44px;
   height: 44px;
@@ -297,8 +304,7 @@
   align-items: center;
   justify-content: center;
   transition: all var(--transition-smooth);
-  background: var(--gradient-primary);
-  box-shadow: var(--glass-shadow-sm);
+  background: var(--primary-color);
   border: none;
 }
 
@@ -467,7 +473,15 @@
   }
 
   .navLink:hover {
-    background: rgba(242, 106, 61, 0.08);
+    background: transparent;
+    color: var(--primary-color);
+  }
+
+  .activeNavLink,
+  .activeNavLink:hover {
+    color: #ffffff;
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    background: var(--secondary-color);
   }
 
   .dropdown {
@@ -544,47 +558,22 @@
 
   .ctaButton {
     display: flex;
-    gap: var(--spacing-sm);
-    height: 48px;
-    font-size: var(--font-size-base);
-    padding: var(--spacing-sm) var(--spacing-xl);
-    border-radius: var(--radius-full);
+    height: 44px;
+    padding: 0 var(--spacing-lg);
     align-items: center;
     justify-content: center;
-    background: var(--gradient-primary);
-    color: var(--light-color);
+    color: #ffffff;
+    white-space: nowrap;
+    background: var(--primary-color);
+    border-radius: var(--radius-sm);
     font-weight: var(--font-weight-semibold);
     transition: all var(--transition-smooth);
-    box-shadow: var(--glass-shadow-pink);
-    border: none;
-    letter-spacing: var(--letter-spacing-normal);
-    text-decoration: none;
-    white-space: nowrap;
   }
 
   .ctaButton:hover {
-    color: var(--light-color);
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: var(--glass-shadow-pink-hover);
-  }
-
-  .ctaButton:active {
-    transform: translateY(0);
-  }
-
-  .sparkleIcon {
-    font-size: 18px;
-    animation: sparkle 2s ease-in-out infinite;
-  }
-
-  @keyframes sparkle {
-    0%,
-    100% {
-      transform: rotate(0deg) scale(1);
-    }
-    50% {
-      transform: rotate(180deg) scale(1.1);
-    }
+    background: var(--primary-hover-color);
   }
 
   .mobileMenuButton {

@@ -18,11 +18,9 @@ import {
 } from "react";
 import {
   IoClose as CloseIcon,
-  IoPersonOutline as PersonIcon,
   IoChevronDownOutline as ChevronDownIcon,
   IoAdd as IoPlusIcon,
   IoRemove as IoMinusIcon,
-  IoSparkles as SparklesIcon,
 } from "react-icons/io5";
 import { CgMenuGridO as MenuIcon } from "react-icons/cg";
 import { MdLogout as LogoutIcon } from "react-icons/md";
@@ -382,17 +380,16 @@ const RightSection = ({
         </button>
       </div>
     ) : (
-      <Link href="/authentication/login" className={styles.accountSection}>
-        <PersonIcon className={styles.accountIcon} />
+      <Link href="/authentication/login" className={styles.loginLink}>
+        Log in
       </Link>
     )}
   </div>
 );
 
 const CTASection = () => (
-  <Link href="/tiers" className={styles.ctaButton}>
-    <SparklesIcon className={styles.sparkleIcon} />
-    <span>Start Learning</span>
+  <Link href="/authentication/signup" className={styles.ctaButton}>
+    Sign Up
   </Link>
 );
 
@@ -512,7 +509,7 @@ const NavbarContent = () => {
               isLoggingOut={isLoggingOut}
               isMobile={isMobile}
             />
-            {!isMobile && <CTASection />}
+            {!isMobile && !isAuth && <CTASection />}
             {isMobile && (
               <button
                 onClick={handleMobileMenuToggle}

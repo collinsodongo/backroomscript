@@ -21,7 +21,7 @@ export const useSubscriptionStore = create((set, get) => ({
       description: "Start learning for free and begin your path to certification",
       features: [
         "Email support (24h response)",
-        "Access to 1 basic template per day"
+        "Access to 1 lesson per day"
       ],
       limits: {
         templatesPerDay: 1,
@@ -30,9 +30,7 @@ export const useSubscriptionStore = create((set, get) => ({
         previousAccess: false,
         coaching: false,
         responseTime: "24 hours"
-      },
-      color: "#f26a3d",
-      gradient: "linear-gradient(135deg, #f26a3d 0%, #e85d2f 100%)"
+      }
     },
     pro: {
       id: "pro",
@@ -41,15 +39,14 @@ export const useSubscriptionStore = create((set, get) => ({
       currency: "KSh",
       description: "Unlock the full course and get on the path to job placement",
       features: [
-        "WhatsApp community access",
-        "20+ Premium templates",
-        "Bookmark your favorites",
-        "Access previous templates",
         "Everything in Foundation",
-        "Advanced flirting techniques",
-        "Relationship building methods",
+        "20+ premium lessons",
+        "Bookmark your favourite lessons",
+        "Access previous lessons",
+        "WhatsApp community access",
+        "Certification preparation",
+        "Job access through your profile",
         "Priority support (12h response)",
-        "Certification preparation and job access through your profile",
       ],
       limits: {
         templatesPerDay: "unlimited",
@@ -58,9 +55,7 @@ export const useSubscriptionStore = create((set, get) => ({
         previousAccess: true,
         coaching: false,
         responseTime: "12 hours"
-      },
-      color: "#10b981",
-      gradient: "linear-gradient(135deg, #10b981 0%, #34d399 100%)"
+      }
     },
     elite: {
       id: "elite",
@@ -69,17 +64,12 @@ export const useSubscriptionStore = create((set, get) => ({
       currency: "KSh",
       description: "Complete training with mentorship and priority job access",
       features: [
-        "Unlimited Expert templates",
-        "All categories unlocked",
-        "Monthly content updates",
+        "Everything in Certificate",
+        "Unlimited lessons in every course",
+        "Monthly and lifetime content updates",
         "Direct WhatsApp support",
-        "Custom template requests",
-        "Lifetime content updates",
-        "Everything on Certificate",
-        "Priority feature requests",
         "1-on-1 mentorship session (60min)",
         "Priority access to jobs from companies that hire through us",
-
       ],
       limits: {
         templatesPerDay: "unlimited",
@@ -88,9 +78,7 @@ export const useSubscriptionStore = create((set, get) => ({
         previousAccess: true,
         coaching: true,
         responseTime: "2 hours"
-      },
-      color: "#fbbf24",
-      gradient: "linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)"
+      }
     }
   },
   pricingLoaded: false,

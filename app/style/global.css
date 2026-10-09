@@ -19,6 +19,9 @@
     --light-background-color: #fff5f0;
     --background-light-color: #fff5f0;
     --section-background: #fffaf7;
+    --secondary-hover-color: #059669;
+    --secondary-lighter-color: #ecfdf5;
+    --info-color: #3b82f6;
 
     --gold-color: #fbbf24;
     --gold-dark-color: #f59e0b;
@@ -140,7 +143,7 @@
   body {
     font-family: var(--font-family-primary);
     font-weight: var(--font-weight-regular);
-    background: var(--glass-bg-strong);
+    background: #ffffff;
     background-attachment: fixed;
     color: var(--dark-color);
     line-height: 1.6;

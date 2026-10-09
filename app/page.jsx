@@ -1,15 +1,21 @@
-"use client";
-
-import Testimonials from "@/app/components/Testimonials";
 import HomeSection from "@/app/components/HomeSection";
-import MiddleSection from "@/app/components/MiddleSection";
+import StepsSection from "@/app/components/StepsSection";
+import CoursesSection from "@/app/components/CoursesSection";
+import FutureSection from "@/app/components/FutureSection";
+import Testimonials from "@/app/components/Testimonials";
+import PricingSection from "@/app/components/PricingSection";
+import CommunitySection from "@/app/components/CommunitySection";
 
 export default function Home() {
   return (
     <main>
       <HomeSection />
-      <MiddleSection />
+      <StepsSection />
+      <CoursesSection />
+      <FutureSection />
+      <PricingSection />
       <Testimonials />
+      <CommunitySection />
     </main>
   );
 }
